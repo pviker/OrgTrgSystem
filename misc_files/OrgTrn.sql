@@ -50,20 +50,20 @@ INSERT INTO employees VALUES
 	('', 'Scott', 'Dedon', 'sd@aol.com' , 'pf@aol.com' , '6');
 	
 INSERT INTO credentials values 
-	('1', 'jw@aol.com', 'password' , '1' ), 
-	('2', 'pw@aol.com', 'password' , '0' ), 
-	('3', 'gp@aol.com', 'password' , '0' ), 
-	('4', 'hg@aol.com', 'password' , '0' ), 
-	('5', 'ps@aol.com', 'password' , '0' ), 
-	('6', 'jp@aol.com', 'password' , '0' ), 
-	('7', 'yx@aol.com', 'password' , '0' ), 
-	('8', 'fp@aol.com', 'password' , '0' ), 
-	('9', 'jl@aol.com', 'password' , '0' ), 
-	('10', 'fc@aol.com', 'password' , '0' ), 
-	('11', 'pf@aol.com', 'password' , '0' ), 
-	('12', 'ts@aol.com', 'password' , '0' ), 
-	('13', 'br@aol.com', 'password' , '0' ), 
-	('14', 'kj@aol.com', 'password' , '0' ), 
-	('15', 'sd@aol.com', 'password' , '0' ); 
+	('1', 'jw@aol.com', sha1('password' ), '1' ), 
+	('2', 'pw@aol.com', sha1('password' ) , '0' ), 
+	('3', 'gp@aol.com', sha1('password' ) , '0' ), 
+	('4', 'hg@aol.com', sha1('password' ) , '0' ), 
+	('5', 'ps@aol.com', sha1('password' ) , '0' ), 
+	('6', 'jp@aol.com', sha1('password' ) , '0' ), 
+	('7', 'yx@aol.com',sha1('password' ) , '0' ), 
+	('8', 'fp@aol.com',sha1('password' ) , '0' ), 
+	('9', 'jl@aol.com',sha1('password' ) , '0' ), 
+	('10', 'fc@aol.com', sha1('password' ) , '0' ), 
+	('11', 'pf@aol.com', sha1('password' ) , '0' ), 
+	('12', 'ts@aol.com', sha1('password' ) , '0' ), 
+	('13', 'br@aol.com', sha1('password' ) , '0' ), 
+	('14', 'kj@aol.com', sha1('password1' ) , '0' ), 
+	('15', 'sd@aol.com',sha1('password2' ) , '0' ); 
 	
 	
