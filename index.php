@@ -1,6 +1,5 @@
 <?php 
-	
-	// session_start();
+
 /* 
  * ICS325 - Group Project
  * Iteration: 2
@@ -10,15 +9,13 @@
  * Description: Main index page when going to the main site
  *   
  * */
- 
-	if(null === session_id()){
-		session_start();
-	}	
-	
-	
 
-print_r($_SESSION);
+	if(!isset($_SESSION)) session_start();
+	
+	print_r($_SESSION);
+	
 ?>
+
 	<div class="mainContentNoCrumbs" >
 			<p id="indexContent">
 				<h1 class="indexH1">
