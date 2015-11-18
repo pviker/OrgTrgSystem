@@ -10,12 +10,9 @@
  * Description: Main index page when going to the main site
  *   
  * */
- 
-	if(null === session_id()){
-		session_start();
-	}	
-	
-	
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 print_r($_SESSION);
 ?>

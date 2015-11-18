@@ -6,11 +6,11 @@ use orgTrn;
 
 CREATE TABLE `employees` (
 	`id` INT NOT NULL AUTO_INCREMENT, 
-	`first_name` VARCHAR(45) NULL,
-	`last_name` VARCHAR(45) NULL,
+	`name` VARCHAR(45) NULL,
 	`email` VARCHAR(45) NULL,
-	`boss email` VARCHAR (45) NULL, 
-	`ELevel` INT NOT NULL, 
+	`organization_name` VARCHAR(45) NULL, 
+	`role` VARCHAR(45) NULL, 
+	`manager_email` VARCHAR (45) NULL, 
 	PRIMARY KEY (`id`)); 
 
 CREATE TABLE `credentials` (
@@ -24,30 +24,27 @@ CREATE TABLE `credentials` (
 CREATE TABLE `plans` ( 
 	`id` INT NOT NULL,
 	`pYear` INT NOT NULL,
-	`plan1` VARCHAR(45) NULL, 
-	`plan2` VARCHAR(45) NULL, 
-	`plan3` VARCHAR(45) NULL, 
-	`plan4` VARCHAR(45) NULL,
+	`plan` MEDIUMBLOB NULL, 
 	`shared` BINARY NOT NULL,
 	PRIMARY KEY (`id`,`pYear`),
 	FOREIGN KEY (`id`) REFERENCES employees(`id`)); 
 	
 INSERT INTO employees VALUES 
-	('', 'Josh', 'Wilson', 'jw@aol.com' , 'jw@aol.com' , '10'),
-	('', 'Paul', 'Wilson', 'pw@aol.com' , 'jw@aol.com' , '9'),
-	('', 'Gram', 'Parker', 'gp@aol.com' , 'jw@aol.com' , '9'),
-	('', 'Hannah', 'Ganoe', 'hg@aol.com' , 'jw@aol.com' , '9'),
-	('', 'Paula', 'Sheehan', 'ps@aol.com' , 'jw@aol.com' , '9'),
-	('', 'Javier', 'Pilson', 'jp@aol.com' , 'pw@aol.com' , '8'),
-	('', 'Youna', 'Xiong', 'yx@aol.com' , 'ps@aol.com' , '8'),
-	('', 'Pilsner', 'Francis', 'fp@aol.com' , 'hg@aol.com' , '8'),
-	('', 'Josh', 'Lucas', 'jl@aol.com' , 'gp@aol.com' , '8'),
-	('', 'Foodie', 'Critic', 'fc@aol.com' , 'jl@aol.com' , '7'),
-	('', 'Pierrie', 'Favre', 'pf@aol.com' , 'jl@aol.com' , '7'),
-	('', 'Tyler', 'Shanks', 'ts@aol.com' , 'yx@aol.com' , '6'),
-	('', 'Betty', 'Robinson', 'br@aol.com' , 'fc@aol.com' , '6'),
-	('', 'Kevin', 'Johnson', 'kj@aol.com' , 'fc@aol.com' , '6'),
-	('', 'Scott', 'Dedon', 'sd@aol.com' , 'pf@aol.com' , '6');
+	('', 'Josh Wilson', 'jw@aol.com' , 'CEO', 'CEO', 'jw@aol.com' ),
+	('', 'Paul Wilson', 'pw@aol.com' , 'Software Team' , 'Manager', 'jw@aol.com'),
+	('', 'Gram Parker', 'gp@aol.com' , 'Network Team', 'Manager', 'jw@aol.com'),
+	('', 'Hannah Ganoe', 'hg@aol.com' , 'Sales' , 'Manager' , 'jw@aol.com'),
+	('', 'Paula Sheehan', 'ps@aol.com' , 'Sales', 'Manager' , 'jw@aol.com' ),
+	('', 'Javier Pilson', 'jp@aol.com' , 'Software Team', 'Team Lead' , 'pw@aol.com' ),
+	('', 'Youna Xiong', 'yx@aol.com' , 'Sales', 'Team Lead' ,'ps@aol.com'),
+	('', 'Pilsner Francis', 'fp@aol.com' , 'Sales', 'Team Lead' , 'hg@aol.com' ),
+	('', 'Josh Lucas', 'jl@aol.com' , 'Network Team', 'Team Lead', 'gp@aol.com' ),
+	('', 'Foodie Critic', 'fc@aol.com' , 'Network Team', 'Employee', 'jl@aol.com'),
+	('', 'Pierrie Favre', 'pf@aol.com' , 'Network Team', 'Employee' , 'jl@aol.com'),
+	('', 'Tyler Shanks', 'ts@aol.com' , 'Sales', 'Employee', 'yx@aol.com'),
+	('', 'Betty Robinson', 'br@aol.com' , 'Sales', 'Employee', 'yx@aol.com'),
+	('', 'Kevin Johnson', 'kj@aol.com', 'Software Team', 'Employee', 'jp@aol.com'),
+	('', 'Scott Dedon', 'sd@aol.com', 'Software Team', 'Employee', 'jp@aol.com');
 	
 INSERT INTO credentials values 
 	('1', 'jw@aol.com', sha1('password' ), '1' ), 
