@@ -1,5 +1,7 @@
 <?php
 
+
+//error_reporting(E_ALL ^ E_NOTICE);
 ini_set("display_errors",1);
 require_once 'excel_reader2.php';
 require_once 'db.php';
@@ -39,4 +41,5 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
 $html.="</table>";
 echo $html;
 echo "<br />Data Inserted in database";
+//echo $data->dump(true, true);
 ?>
