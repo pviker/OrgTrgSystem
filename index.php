@@ -2,7 +2,7 @@
 	
 	// session_start();
 /* 
- * ICS325 - Group Project
+ * ICS325 - Final Project
  * Iteration: 2
  * Group: D for Dolphins
  * File: index.php

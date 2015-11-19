@@ -30,7 +30,7 @@ CREATE TABLE `plans` (
 	FOREIGN KEY (`id`) REFERENCES employees(`id`)); 
 	
 INSERT INTO employees VALUES 
-	('', 'Josh Wilson', 'jw@aol.com' , 'CEO', 'CEO', 'jw@aol.com' ),
+	('', 'Josh Wilson', 'jw@aol.com' , 'CEO', 'CEO', '' ),
 	('', 'Paul Wilson', 'pw@aol.com' , 'Software Team' , 'Manager', 'jw@aol.com'),
 	('', 'Gram Parker', 'gp@aol.com' , 'Network Team', 'Manager', 'jw@aol.com'),
 	('', 'Hannah Ganoe', 'hg@aol.com' , 'Sales' , 'Manager' , 'jw@aol.com'),
