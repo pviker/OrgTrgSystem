@@ -9,7 +9,6 @@
  * Description: Main index page when going to the main site
  *   
  * */
-<<<<<<< HEAD
  
 	require("controllers/database.php");
 		
@@ -38,13 +37,7 @@
 	$curPlan = $row[0];
 	echo $curPlan; 
 
-=======
-
-	if(!isset($_SESSION)) session_start();
 	
-	print_r($_SESSION);
-	
->>>>>>> origin/master
 ?>
 
 	<div class="mainContentNoCrumbs" >

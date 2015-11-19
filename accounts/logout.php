@@ -1,9 +1,4 @@
 <?php 
-<<<<<<< HEAD
-	session_start();    
-=======
-    session_start();    
->>>>>>> origin/master
 /* 
  * ICS325 - Group Project
  * Iteration: 2
@@ -25,19 +20,3 @@
     header("Location: ../index.php");
 
 ?>
-=======
- * Description: Logout user
- *   
- * */
- 
-    session_unset();
-    session_destroy();
- 
-    session_start();
- 
-    $_SESSION['logoutMessage'] = "You have succesfully logged out.";
-    
-    header("Location: ../index.php");
-
-?>
->>>>>>> origin/master
