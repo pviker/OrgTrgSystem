@@ -19,13 +19,13 @@
 ?>
 	<h3> Peers </h3> 
 <?php
-	$mangQuery = "SELECT manager_email FROM employees WHERE email = '".$username."'"; 
+	$mangQuery = "SELECT role FROM employees WHERE email = '".$username."'"; 
 	$result = mysqli_query($dbc, $mangQuery); 
 	$row = mysqli_fetch_row($result); 
-	$mangEmail = $row[0]; 
+	$role = $row[0]; 
 	mysqli_free_result($result);
 	
-	$peerQuery = "SELECT * FROM employees WHERE manager_email = '".$mangEmail."'";
+	$peerQuery = "SELECT * FROM employees WHERE role = '".$role."'";
     $result = mysqli_query($dbc, $peerQuery);
     
 	while ($row = mysqli_fetch_row($result)){
