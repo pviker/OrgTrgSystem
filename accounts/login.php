@@ -1,6 +1,6 @@
 <?php 	
 /* 
- * ICS325 - Group Project
+ * ICS325 - FInal Project
  * Final Project
  * Group: D for Dolphins
  * File: login.php

@@ -24,7 +24,7 @@ CREATE TABLE `credentials` (
 CREATE TABLE `plans` ( 
 	`id` INT NOT NULL,
 	`pYear` INT NOT NULL,
-	`plan` MEDIUMBLOB NULL, 
+	`plan` TEXT NULL, 
 	`shared` BINARY NOT NULL,
 	PRIMARY KEY (`id`,`pYear`),
 	FOREIGN KEY (`id`) REFERENCES employees(`id`)); 

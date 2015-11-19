@@ -10,11 +10,34 @@
  * Description: Main index page when going to the main site
  *   
  * */
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+ 
+	require("controllers/database.php");
+		
+	if (session_status() == PHP_SESSION_NONE) {
+		session_start();
+	}
 
-print_r($_SESSION);
+	if (!isset($_SESSION['uname'])){
+		header ('Location:accounts/login.php'); 
+	}
+	print_r($_SESSION);
+	
+	$curYear = date("Y");  
+	$username= $_SESSION['uname']; 
+	
+	$idQuery = "SELECT id FROM credentials WHERE username = '".$username."'" ; 
+	$result = mysqli_query($dbc, $idQuery);
+	$row = mysqli_fetch_row($result);
+   	$userid = $row[0];
+	mysqli_free_result($result);
+	echo $userid."</br>";
+	
+	$planQuery = "SELECT plan FROM plans WHERE id = '".$userid."' AND pYear = '".$curYear."'"; 
+	$result = mysqli_query($dbc, $planQuery); 
+	$row = mysqli_fetch_row($result);
+	$curPlan = $row[0];
+	echo $curPlan; 
+
 ?>
 	<div class="mainContentNoCrumbs" >
 			<p id="indexContent">
@@ -38,6 +61,8 @@ print_r($_SESSION);
                 </h1> <br /><br />
 				<h3 class="indexH1">This website allows for us to share our plans for the future of our organization. </h3>
 			</p>
+			<a href='accounts/logout.php'> Log out </a> </br>
+			<a href='plans/create.php'> Create </a> 
 		</div>
 		
 	</body>
