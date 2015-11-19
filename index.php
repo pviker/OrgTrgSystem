@@ -1,6 +1,5 @@
 <?php 
-	
-	// session_start();
+
 /* 
  * ICS325 - Final Project
  * Iteration: 2
@@ -10,6 +9,7 @@
  * Description: Main index page when going to the main site
  *   
  * */
+<<<<<<< HEAD
  
 	require("controllers/database.php");
 		
@@ -38,7 +38,15 @@
 	$curPlan = $row[0];
 	echo $curPlan; 
 
+=======
+
+	if(!isset($_SESSION)) session_start();
+	
+	print_r($_SESSION);
+	
+>>>>>>> origin/master
 ?>
+
 	<div class="mainContentNoCrumbs" >
 			<p id="indexContent">
 				<h1 class="indexH1">

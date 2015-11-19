@@ -63,4 +63,4 @@ INSERT INTO credentials values
 	('14', 'kj@aol.com', sha1('password1' ) , '0' ), 
 	('15', 'sd@aol.com',sha1('password2' ) , '0' ); 
 	
-	
+	$fname = mysqli_real_escape_string($$dbc,$data->sheets[$i]['cells'][$j][1]);
