@@ -62,6 +62,10 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
             
             $defaultPswd = str_shuffle("abcdefg12345");
             
+            $file = fopen("../misc_files/passwords.txt", "a") or die("Unable to open file!");
+            
+            fwrite($file, $defaultPswd . "\n");
+            
             $credInsertQuery = "insert into credentials (id, username, password, admin)
             values ('" . $last_id . "', '" . $email . "', sha1('" . $defaultPswd . "'), '0')";
             
@@ -72,6 +76,7 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
             
             mysqli_query($connection, $planInsertQuery);
             
+            
            
             }
             
@@ -81,6 +86,7 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
 	}
 
 }
+
 
 $html.="</table>";
 echo $html;

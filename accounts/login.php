@@ -13,7 +13,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-	require("../controllers/database.php");
+	require("../upload/db2.php");
   
 	if(isset($_POST['Send'])) {
 	    
@@ -55,7 +55,7 @@ if (session_status() == PHP_SESSION_NONE) {
     $adminQuery = "select count(*) from credentials where username = '" . $username . "' and 
     password = sha1('" . $password . "') and admin = '1'";
     
-    $result = mysqli_query($dbc, $adminQuery);
+    $result = mysqli_query($connection, $adminQuery);
            
           
     if(!$result) {
@@ -87,7 +87,7 @@ if (session_status() == PHP_SESSION_NONE) {
     $query = "select count(*) from credentials where username = '" . $username . "' and 
     password = sha1('" . $password . "')";
     
-    $result = mysqli_query($dbc, $query);
+    $result = mysqli_query($connection, $query);
     
     if(!$result) {
         
