@@ -11,6 +11,7 @@
  * */
  
 	require("controllers/database.php");
+   
 		
 	if (session_status() == PHP_SESSION_NONE) {
 		session_start();
@@ -51,12 +52,9 @@
                   			echo $_SESSION['logoutMessage'];
                     		unset($_SESSION['logoutMessage']);
                 		} 
-						else if(isset($_SESSION['emailMessage'])) {
-							echo $_SESSION['emailMessage'];
-							unset($_SESSION['emailMessage']);
-						}
+						
                 		else {
-                			echo "Welcome to Foo Oranization!";
+                			echo "Welcome to Foo Organization!";
                 		} 
                 	?> 
                 </h1> <br /><br />
