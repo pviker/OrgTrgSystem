@@ -29,8 +29,9 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
 			$fname = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][1]);
             $lname = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][2]);
 			$email = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][3]);
-			$bossmail = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][4]);
-			$elevel = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][5]);
+            $team = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][4]);
+			$managerEmail = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][5]);
+			$role = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][6]);
             
             $empQuery = "select first_name, last_name, email from employees where first_name='" . $fname . "' and 
             last_name='". $lname . "' and email='". $email . "'";
@@ -43,7 +44,7 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
             if($count > 0) {
                 
                 $empUpdateQuery = "update employees set first_name ='". $fname . "', last_name='" . $lname . "',
-                email='" . $email . "', boss_email='" . $bossmail . "', elevel='" . $elevel . "' 
+                email='" . $email . "', team='" . $team . "', manager_email='" . $managerEmail . "', role='" . $role . "' 
                 where first_name='" . $fname . "' and last_name='" . $lname . "' and email='" . $email . "'";
                 
                 mysqli_query($connection, $empUpdateQuery);
@@ -52,8 +53,8 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
             }  else {  
             
             
-            $empInsertQuery = "insert into employees(first_name, last_name, email, boss_email, elevel) 
-			values ('".$fname."','".$lname."','".$email."','".$bossmail."','".$elevel."')";
+            $empInsertQuery = "insert into employees(first_name, last_name, email, team, manager_email, role) 
+			values ('".$fname."','".$lname."','".$email."','".$team."','".$managerEmail."','".$role."')";
             
             mysqli_query($connection, $empInsertQuery);
             
@@ -62,7 +63,7 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
             $defaultPswd = str_shuffle("abcdefg12345");
             
             $credInsertQuery = "insert into credentials (id, username, password, admin)
-            values ('" . $last_id . "', '" . $email . "', '" . $defaultPswd . "', '0')";
+            values ('" . $last_id . "', '" . $email . "', sha1('" . $defaultPswd . "'), '0')";
             
             mysqli_query($connection, $credInsertQuery);
             
@@ -74,13 +75,8 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
            
             }
             
+            $html.="</tr>";
             
-            
-            
-            
-            
-            
-			$html.="</tr>";
 		}
 	}
 
