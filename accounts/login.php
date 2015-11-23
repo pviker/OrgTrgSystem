@@ -13,7 +13,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-	require("../upload/db2.php");
+	require("../controllers/db2.php");
   
 	if(isset($_POST['Send'])) {
 	    
