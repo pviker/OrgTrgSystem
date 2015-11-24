@@ -9,14 +9,8 @@
  * Description: Main index page when going to the main site
  *   
  * */
- 
-<<<<<<< HEAD
  	require("includes/header.php");
 
-=======
-    require("include_files/header.php");
-    
->>>>>>> origin/master
 	require("controllers/database.php");
    
 		

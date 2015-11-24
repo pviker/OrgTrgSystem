@@ -9,7 +9,10 @@
  *   
  * */
  
-require("../include_files/header.php");
+ 
+	require("../controllers/db2.php");
+	require("../includes/header.php");
+ 
  
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -24,8 +27,6 @@ if(isset($_SESSION['logoutMessage'])) {
 }
 
 
-	require("../controllers/db2.php");
-	require("../includes/header.php");
   
 	if(isset($_POST['Send'])) {
 	    
