@@ -29,8 +29,18 @@
     
     }
  
+ if($newPassword === $confirmPassword) {
+     
  echo $oldPassword . "<br>";
  echo $newPassword . "<br>";
  echo $confirmPassword . "<br>";
+     
+     
+ } else {
+     
+     echo "Passwords do not match. Please try again.<br>";
+     echo "<a href = \"changePasswordForm.php\">Back to change password</a>";
+     
+ }
 
 ?>
