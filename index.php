@@ -1,23 +1,8 @@
-<!DOCTYPE html>
-
-<html>
-    
-<head>
-    
-    <link rel="stylesheet" href="styles/main.css">
-    
-</head>
-
-<body>
-
-
-
-
 <?php 
 
 /* 
  * ICS325 - Final Project
- * Iteration: 2
+ * Iteration: 1
  * Group: D for Dolphins
  * File: index.php
  * Author: Kevin Casey, Jordan Grenier, Paul Schilmoeller, Patrick Viker, Joshua Wilson
@@ -25,6 +10,8 @@
  *   
  * */
  
+ 	require("includes/header.php");
+
 	require("controllers/database.php");
    
 		
@@ -35,7 +22,7 @@
 	if (!isset($_SESSION['uname'])){
 		header ('Location:accounts/login.php'); 
 	}
-	print_r($_SESSION);
+//	print_r($_SESSION);
 	
 	$curYear = date("Y");  
 	$username= $_SESSION['uname']; 
@@ -45,7 +32,7 @@
 	$row = mysqli_fetch_row($result);
    	$userid = $row[0];
 	mysqli_free_result($result);
-	echo $userid."</br>";
+//	echo $userid."</br>";
 	
 	$planQuery = "SELECT plan FROM plans WHERE id = '".$userid."' AND pYear = '".$curYear."'"; 
 	$result = mysqli_query($dbc, $planQuery); 
@@ -53,10 +40,10 @@
 	$curPlan = $row[0];
 	echo $curPlan; 
 
-	
+	require("includes/topmenu.php");
 ?>
 
-	<div class="mainContentNoCrumbs" >
+	<div class="main-content-wrapper" >
 			<p id="indexContent">
 				<h1 class="indexH1">
 					<?php 
@@ -72,11 +59,10 @@
                 			echo "Welcome to Foo Organization!";
                 		} 
                 	?> 
-                </h1> <br /><br />
-				<h3 class="indexH1">This website allows for us to share our plans for the future of our organization. </h3>
+                </h1> 
+				<h3 class="indexH1">This website allows for us to share our plans for the future of our organization.</h3>
 			</p>
-			<a href='accounts/logout.php'> Log out </a> </br>
-			<a href='plans/create.php'> Create </a> 
+			<a href='plans/create.php'>Create your plan</a> 
 		</div>
 		
 	</body>

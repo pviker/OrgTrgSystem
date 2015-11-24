@@ -14,6 +14,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 
 	require("../controllers/db2.php");
+	require("../includes/header.php");
   
 	if(isset($_POST['Send'])) {
 	    
@@ -27,21 +28,23 @@ if (session_status() == PHP_SESSION_NONE) {
   
 ?>	
 	<!--START MAIN CONTENT-->
-	<div class="mainContent">	
+	<div class="main-content-wrapper">	
 	    
-		<form name="login" action="login.php" method="post">
+		<form name="login" action="login.php" method="post" class="login">
 			
 			<fieldset id="field1">
-				<legend>Credentials</legend>
+				<legend>Login</legend>
 
-				<label>User name:</label><input type="text" name="userName" placeholder="Enter username" size="25" class="fields" id="userName" /><br />
-				<label>Password:</label><input type="password" name="password" placeholder="Enter password" size="25" class="fields" id="password" /><br />
+				<label>User name:</label>
+					<input type="text" name="userName" placeholder="Enter username" size="25" class="fields" id="userName" /><br />
+				<label>Password:</label>
+					<input type="password" name="password" placeholder="Enter password" size="25" class="fields" id="password" /><br />
 
-			</fieldset>
+			</fieldset><br />
 
 			<div class="buttons">
-				<input type="submit" class="buttons" name="Send" alt="Send" value="Send" />
-				<input type="reset" class="buttons" name="Reset" value="Reset" />
+				<input type="submit" name="Send" alt="Send" value="Send" class="formButton" />
+				<input type="reset" name="Reset" value="Reset" class="formButton" />
 			</div> 
 
 			
