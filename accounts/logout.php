@@ -1,12 +1,10 @@
 <?php 
 /* 
- * ICS325 - Group Project
- * Iteration: 2
+ * ICS325 - Final Project
  * Group: D for Dolphins
- * File: login.php
+ * File: logout.php
  * Author: Kevin Casey, Jordan Grenier, Paul Schilmoeller, Patrick Viker, Joshua Wilson
-<<<<<<< HEAD
- * Description: This will be the login page for user login and to view all users.
+ * Description: Logout function
  *   
  * */
  
@@ -17,6 +15,6 @@
  
 	$_SESSION['logoutMessage'] = "You have succesfully logged out.";
     
-    header("Location: ../index.php");
+    header("Location: login.php");
 
 ?>

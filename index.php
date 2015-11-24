@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-
-<html>
-    
-<head>
-    
-    <link rel="stylesheet" href="styles/main.css">
-    
-</head>
-
-<body>
-
-
-
-
 <?php 
 
 /* 
@@ -25,6 +10,8 @@
  *   
  * */
  
+    require("include_files/header.php");
+    
 	require("controllers/database.php");
    
 		

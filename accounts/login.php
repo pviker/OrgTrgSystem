@@ -1,6 +1,6 @@
 <?php 	
 /* 
- * ICS325 - FInal Project
+ * ICS325 - Final Project
  * Final Project
  * Group: D for Dolphins
  * File: login.php
@@ -9,11 +9,20 @@
  *   
  * */
  
+require("../include_files/header.php");
+ 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-	require("../upload/db2.php");
+if(isset($_SESSION['logoutMessage'])) {
+    
+    echo $_SESSION['logoutMessage'];
+    unset($_SESSION['logoutMessage']);
+    
+}
+
+	require("../controllers/db2.php");
   
 	if(isset($_POST['Send'])) {
 	    
@@ -127,3 +136,11 @@ if (session_status() == PHP_SESSION_NONE) {
          }
     }
 }
+
+
+?>
+
+
+</body>
+
+</html>
