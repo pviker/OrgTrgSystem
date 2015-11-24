@@ -10,8 +10,13 @@
  *   
  * */
  
+<<<<<<< HEAD
  	require("includes/header.php");
 
+=======
+    require("include_files/header.php");
+    
+>>>>>>> origin/master
 	require("controllers/database.php");
    
 		
