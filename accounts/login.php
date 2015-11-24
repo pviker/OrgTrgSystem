@@ -15,6 +15,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
+<<<<<<< HEAD
 if(isset($_SESSION['logoutMessage'])) {
     
     echo $_SESSION['logoutMessage'];
@@ -22,6 +23,8 @@ if(isset($_SESSION['logoutMessage'])) {
     
 }
 
+=======
+>>>>>>> origin/master
 	require("../controllers/db2.php");
   
 	if(isset($_POST['Send'])) {
