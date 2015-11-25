@@ -79,7 +79,7 @@
         
     }	else {
       	
-		$_SESSION["message"] = "Your username or password are not correct. Please try again..";
+		$_SESSION["message"] = "Your username or password are not correct. Please try again.";
 		header("Location: ../index.php");
         exit;
        
