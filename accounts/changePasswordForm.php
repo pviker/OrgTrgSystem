@@ -9,7 +9,7 @@
  *   
  * */
 
- require("../include_files/header.php");
+ require("../includes/header.php");
  require("../controllers/db2.php");
   
  if(!isset($_SESSION)) {

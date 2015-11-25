@@ -46,13 +46,21 @@
 			<p id="indexContent">
 				<h1 class="indexH1">
 					<?php 
-						if(isset($_SESSION['confirmMessage'])) {
-							echo $_SESSION['confirmMessage'] . " to Foo Organization"; 
-						} 
+						if(isset($_SESSION['passConfirmMessage'])) {
+                                
+                                echo $_SESSION['passConfirmMessage'];
+                                unset($_SESSION['passConfirmMessage']);
+                             
+                        }
+ 
 						else if(isset($_SESSION['logoutMessage'])) {
                   			echo $_SESSION['logoutMessage'];
                     		unset($_SESSION['logoutMessage']);
-                		} 
+                            
+                		} else if(isset($_SESSION['confirmMessage'])) {
+                		    
+                            echo $_SESSION['confirmMessage'] . " to Foo Organization";
+                		}
 						
                 		else {
                 			echo "Welcome to Foo Organization!";
@@ -61,7 +69,8 @@
                 </h1> 
 				<h3 class="indexH1">This website allows for us to share our plans for the future of our organization.</h3>
 			</p>
-			<a href='plans/create.php'>Create your plan</a> 
+			<a href='plans/create.php'>Create your plan</a><br>
+			<a href='accounts/changePasswordForm.php'>Change your password</a>
 		</div>
 		
 	</body>

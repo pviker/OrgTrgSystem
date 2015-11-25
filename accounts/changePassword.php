@@ -9,7 +9,7 @@
  *   
  * */
 
- require("../include_files/header.php");
+ require("../includes/header.php");
  require("../controllers/db2.php");
   
  if(!isset($_SESSION)) {
@@ -29,18 +29,40 @@
     
     }
  
- if($newPassword === $confirmPassword) {
+     $passQuery = "select password from credentials where username='" . $_SESSION['uname'] . "'";
      
- echo $oldPassword . "<br>";
- echo $newPassword . "<br>";
- echo $confirmPassword . "<br>";
+     $passResult = mysqli_query($connection, $passQuery);
      
+     $passRow = mysqli_fetch_assoc($passResult);
      
- } else {
+     $dbPassword = $passRow['password'];
+     
+     if($dbPassword === sha1($oldPassword)) {
+ 
+        if($newPassword === $confirmPassword) {
+     
+           $passUpdate = "update credentials set password = sha1('" . $newPassword . "')
+           where username = '" . $_SESSION['uname'] . "'";
+           
+           mysqli_query($connection, $passUpdate);
+           
+           $_SESSION['passConfirmMessage'] = "You have successfully changed your password.";
+           
+           header("Location: ../index.php");
+     
+        } else {
      
      echo "Passwords do not match. Please try again.<br>";
      echo "<a href = \"changePasswordForm.php\">Back to change password</a>";
      
- }
+        }
+        
+      }  else {
+     
+     echo "Passwords do not match. Please try again.<br>";
+     echo "<a href = \"changePasswordForm.php\">Back to change password</a>";
+     
+        }
+
 
 ?>
