@@ -71,14 +71,21 @@
                  		<td>" . $row["organization_name"] . "</td>
                  		<td>" . $row["role"] . "</td>
                  		<td>" . $row["manager_email"] . "</td>
-                 		<td><a href=\"editUser.php?id=" . $row["id"] . "\" style=\"color:black\" >EDIT</a> | 
-                 			<a href=\"deleteUser.php?id=" . $row["id"] . "\" style=\"color:black\" >DELETE</a></td>
+                 		<td>
+                 			<a href=\"editUser.php?id=" . $row["id"] . "\" style=\"color:black\" >EDIT</a> | "
+                 			. //"<a href=\"\" style=\"color:black\" onclick='confirmUserDelete()'>DELETE</a>" 
+                 			 "
+                 			<a href='#' class='confirmDelete' onclick='alertBox()'>DELETE</a>
+                 		</td>
+                 		
+                 			
                  	</tr>";    
              }
              
              ?>
              
         	</table>
+        	
 		</div>
      
 		<?php     

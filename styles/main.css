@@ -195,7 +195,8 @@ form.edit-user-form select {
 	background:-o-linear-gradient(bottom, #ffffff 5%, #777777 100%);	
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffffff), color-stop(1, #777777) ); 
 	background:-moz-linear-gradient( center top, #ffffff 5%, #777777 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#777777");	background: -o-linear-gradient(top,#ffffff,777777);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#777777");	
+	background: -o-linear-gradient(top,#ffffff,777777);
 
 	background-color:#ffffff;
 

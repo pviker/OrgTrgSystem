@@ -47,25 +47,22 @@
 		
 		?>                       
             
-        <form class="edit-user-form" name="editUser" action="updateuser.php" method="post">
+        <form class="edit-user-form" name="editUser" action="updateUser.php" method="post">
             
             <fieldset class="fieldset">
             	
-            	<input type="hidden" value="<?php echo $employeeID ?>" />
+            	<input type="hidden" name="employeeID" value="<?php echo $employeeID ?>" />
                 
                <label>Username:</label>
                    <input type="text" name="username" readonly="true" class="fields" value="<?php echo $username ?>" size="25"><br>
-                
-               <label>Password:</label>
-                   <input type="text" name="password" placeholder="New password" class="fields" value="" size="25"><br> 
-                   
+                  
                <label>Admin:</label>
                   <select name="admin">      
                     <option value="1" <?php if($admin == 1) {echo "selected";} ?> >Yes</option>
 					<option value="0" <?php if($admin == 0) {echo "selected";} ?> >No</option>
                	  </select><br />
             
-               <label>Last Name:</label>
+               <label>Name:</label>
                    <input type="text" name="name" class="fields" value="<?php echo $name ?>" size="25"><br>
                 
                <label>E-mail:</label>
@@ -75,7 +72,13 @@
                    <input type="text" name="orgName" class="fields" value="<?php echo $orgName ?>" size="25"><br>
                    
                <label>Role:</label>
-                   <input type="text" name="role" class="fields" value="<?php echo $role ?>" size="25"><br>
+                  <select name="role">      
+                    <option value="CEO" <?php if($role == "CEO") {echo "selected";} ?> >CEO</option>
+					<option value="Manager" <?php if($role == "Manager") {echo "selected";} ?> >Manager</option>
+					<option value="Team Lead" <?php if($role == "Team Lead") {echo "selected";} ?> >Team Lead</option>
+					<option value="Employee" <?php if($role == "Employee") {echo "selected";} ?> >Employee</option>
+					<option value="Admin" <?php if($role == "Admin") {echo "selected";} ?> >Admin</option>
+               	  </select><br /> 
                    
                <label>Mgr Email:</label>
                    <input type="text" name="mgrEmail" class="fields" value="<?php echo $mgrEmail ?>" size="25"><br>
