@@ -17,6 +17,10 @@ div.top-menu {
 	padding: 3px;
 }
 
+h1.center{
+	text-align: center;
+}
+
 a {
 	text-decoration: none;
 	color: #283018;
@@ -49,6 +53,30 @@ form.change-password label {
 	display: inline-block;
 	width: 15em;
 	text-align: right;
+}
+
+form.edit-user-form {
+	width: 75%;
+	margin-left: 12%;
+	
+}
+
+form.edit-user-form label {
+	margin-right: .5em;
+	display: inline-block;
+	width:12%;
+	text-align: right;
+}
+
+form.edit-user-form select {
+	margin-right: .5em;
+	display: inline-block;
+	width: 15.5em;
+	text-align: right;
+	text-align: center;
+	margin: .3em;
+	padding: .5em;
+	line-height: 5;
 }
 
 .fieldset {
@@ -115,7 +143,7 @@ form.change-password label {
 	padding:0px;
 	width:90%;
 	box-shadow: 10px 10px 5px #888888;
-	border:0px solid black;
+	border:1px solid black;
 	
 	-moz-border-radius-bottomleft:14px;
 	-webkit-border-bottom-left-radius:14px;
@@ -175,7 +203,7 @@ form.change-password label {
 	border-width:0px 1px 1px 0px;
 	text-align:left;
 	padding:7px;
-	font-size:10px;
+	font-size:12px;
 	font-family: 'Open Sans' sans-serif;
 	color:#000000;
 }.user-table tr:last-child td{
@@ -184,8 +212,9 @@ form.change-password label {
 	border-width:0px 0px 1px 0px;
 }.user-table tr:last-child td:last-child{
 	border-width:0px 0px 0px 0px;
-}
-.user-table tr:first-child td{
+}.user-table td:last-child{
+	text-align: center;
+}.user-table tr:first-child td{
 	background:-o-linear-gradient(bottom, #000000 5%, #003f7f 100%);	
 	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #000000), color-stop(1, #003f7f) );
 	background:-moz-linear-gradient( center top, #000000 5%, #003f7f 100% );

@@ -1,13 +1,24 @@
 <?php 
 
 	require("../includes/header.php");
+
+	if(!isset($_SESSION["uname"])){
+		header("Location: ../index.php");
+	}
+	
+	if (isset($_SESSION["adminFlag"])){
+		if($_SESSION["adminFlag"] != 1){
+			header("Location: ../index.php");
+		}
+	}
+	
 	require("../includes/topmenu.php");
 	require("../controllers/db2.php");
 	
 ?>
 
 	<div class="main-content-wrapper">
-		<h1 class="indexH1">Registered Users</h1>		
+			
 	</div>
     
 <?php 
@@ -19,13 +30,14 @@
     $results = mysqli_query($connection, $userInfoQuery);
      
 ?>
+     <h1 class="center">Current Employees</h1>
      
-     <div class = "user-table">
+     <div class="user-table">
      	
-         
+
          <table>
              <tr>
-                 <td>ID</td>
+                 
                  <td>User name</td>
                  <td>Password</td>
                  <td>Admin</td>
@@ -50,7 +62,7 @@
 				 }
                      
                  echo "<tr>
-                 		<td>" . $row["id"] . "</td>
+                 		
                  		<td>" . $row["username"] . "</td>
                  		<td>" . $row["username"] . "</td>
                  		<td>" . $admin . "</td>
@@ -59,7 +71,8 @@
                  		<td>" . $row["organization_name"] . "</td>
                  		<td>" . $row["role"] . "</td>
                  		<td>" . $row["manager_email"] . "</td>
-                 		<td><a href=\"edituser.php?id=" . $row["id"] . "\" style=\"color:black\" >EDIT</a></td>
+                 		<td><a href=\"editUser.php?id=" . $row["id"] . "\" style=\"color:black\" >EDIT</a> | 
+                 			<a href=\"deleteUser.php?id=" . $row["id"] . "\" style=\"color:black\" >DELETE</a></td>
                  	</tr>";    
              }
              
