@@ -1,77 +1,67 @@
-<?php 
-
+<?php 	
 /* 
  * ICS325 - Final Project
- * Iteration: 1
+ * Final Project
  * Group: D for Dolphins
- * File: index.php
+ * File: login.php
  * Author: Kevin Casey, Jordan Grenier, Paul Schilmoeller, Patrick Viker, Joshua Wilson
- * Description: Main index page when going to the main site
+ * Description: This will be the login page for user login.
  *   
  * */
- 	require("includes/header.php");
-
-	require("controllers/database.php");
-   
-		
-	if (session_status() == PHP_SESSION_NONE) {
-		session_start();
-	}
-
-	if (!isset($_SESSION['uname'])){
-		header ('Location:accounts/login.php'); 
-	}
-//	print_r($_SESSION);
-	
-	$curYear = date("Y");  
-	$username= $_SESSION['uname']; 
-	
-	$idQuery = "SELECT id FROM credentials WHERE username = '".$username."'" ; 
-	$result = mysqli_query($dbc, $idQuery);
-	$row = mysqli_fetch_row($result);
-   	$userid = $row[0];
-	mysqli_free_result($result);
-//	echo $userid."</br>";
-	
-	$planQuery = "SELECT plan FROM plans WHERE id = '".$userid."' AND pYear = '".$curYear."'"; 
-	$result = mysqli_query($dbc, $planQuery); 
-	$row = mysqli_fetch_row($result);
-	$curPlan = $row[0];
-	echo $curPlan; 
-
-	require("includes/topmenu.php");
-?>
-
-	<div class="main-content-wrapper" >
-			<p id="indexContent">
-				<h1 class="indexH1">
-					<?php 
-						if(isset($_SESSION['passConfirmMessage'])) {
-                                
-                                echo $_SESSION['passConfirmMessage'];
-                                unset($_SESSION['passConfirmMessage']);
-                             
-                        }
  
-						else if(isset($_SESSION['logoutMessage'])) {
-                  			echo $_SESSION['logoutMessage'];
-                    		unset($_SESSION['logoutMessage']);
-                            
-                		} else if(isset($_SESSION['confirmMessage'])) {
-                		    
-                            echo $_SESSION['confirmMessage'] . " to Foo Organization";
-                		}
-						
-                		else {
-                			echo "Welcome to Foo Organization!";
-                		} 
-                	?> 
-                </h1> 
-				<h3 class="indexH1">This website allows for us to share our plans for the future of our organization.</h3>
-			</p>
-			<a href='plans/create.php'>Create your plan</a><br>
-			<a href='accounts/changePasswordForm.php'>Change your password</a>
-		</div>
+	if (session_status() == PHP_SESSION_NONE) {
+	    session_start();
+	}
+	
+	if(isset($_SESSION["uname"])) {
+		if($_SESSION["adminFlag"] == 1){
+			header("Location: accounts/admin.php");
+		} else header("Location: plans/viewPlan.php");
+	}
 		
-	</body>
+  	require("controllers/db2.php");
+	require("includes/header.php");  
+
+?>	
+	<!--START MAIN CONTENT-->
+	<div class="main-content-wrapper">	
+		
+		<?php 
+		
+			if(isset($_SESSION["message"])){
+				echo $_SESSION["message"];
+				unset($_SESSION['message']);
+			}
+			
+			if(isset($_SESSION['logoutMessage'])) {	    
+	    		echo $_SESSION['logoutMessage'];
+	    		unset($_SESSION['logoutMessage']);
+	}
+		
+		?>
+	    <br />
+		<form name="login" action="accounts/login.php" method="post" class="login">
+			
+			<fieldset id="field1">
+				<legend>Login</legend>
+
+				<label>User name:</label>
+					<input type="text" name="userName" placeholder="Enter username" size="25" class="fields" id="userName" /><br />
+				<label>Password:</label>
+					<input type="password" name="password" placeholder="Enter password" size="25" class="fields" id="password" /><br />
+
+			</fieldset><br />
+
+			<div class="buttons">
+				<input type="submit" name="Send" alt="Send" value="Send" class="formButton" />
+				<input type="reset" name="Reset" value="Reset" class="formButton" />
+			</div> 
+
+			
+		</form>
+	
+	</div>
+
+</body>
+
 </html>

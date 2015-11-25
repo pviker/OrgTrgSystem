@@ -11,74 +11,34 @@
  
  
 	require("../controllers/db2.php");
-	require("../includes/header.php");
+//	require("includes/header.php");
  
  
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+	if (session_status() == PHP_SESSION_NONE) {
+	    session_start();
+	}
 
-
-if(isset($_SESSION['logoutMessage'])) {
-    
-    echo $_SESSION['logoutMessage'];
-    unset($_SESSION['logoutMessage']);
-    
-}
-
-
-  
-	if(isset($_POST['Send'])) {
-	    
-	$username = $_POST['userName'];
-	$password = $_POST['password'];
-	
+	if(isset($_POST['Send'])) {   
+		$username = $_POST['userName'];
+		$password = $_POST['password'];
 	}  
 	
    
 	if((!isset($username)) || (!isset($password))) {
-  
-?>	
-	<!--START MAIN CONTENT-->
-	<div class="main-content-wrapper">	
+		header("Location: ../index.php");
+	} else {
+    
+	    $adminQuery = "select count(*) from credentials where username = '" . $username . "' and 
+	    password = sha1('" . $password . "') and admin = '1'";
 	    
-		<form name="login" action="login.php" method="post" class="login">
-			
-			<fieldset id="field1">
-				<legend>Login</legend>
-
-				<label>User name:</label>
-					<input type="text" name="userName" placeholder="Enter username" size="25" class="fields" id="userName" /><br />
-				<label>Password:</label>
-					<input type="password" name="password" placeholder="Enter password" size="25" class="fields" id="password" /><br />
-
-			</fieldset><br />
-
-			<div class="buttons">
-				<input type="submit" name="Send" alt="Send" value="Send" class="formButton" />
-				<input type="reset" name="Reset" value="Reset" class="formButton" />
-			</div> 
-
-			
-		</form>
-	
-	</div>
-<?php 
-
-} else {
-    
-    $adminQuery = "select count(*) from credentials where username = '" . $username . "' and 
-    password = sha1('" . $password . "') and admin = '1'";
-    
-    $result = mysqli_query($connection, $adminQuery);
-           
+	    $result = mysqli_query($connection, $adminQuery);
           
-    if(!$result) {
+   		if(!$result) {
         
-        echo "Cannot run query.";
-        exit;
-        
-    }
+	        $_SESSION["message"] = "ERROR: Cannot run query.";
+			header("Location: ../index.php");
+	        exit; 
+    	}
     
     $row = mysqli_fetch_row($result);
     $count = $row[0];
@@ -86,29 +46,24 @@ if(isset($_SESSION['logoutMessage'])) {
     if($count > 0) {
         
         $_SESSION['uname'] = $username;
-        
         $_SESSION['confirmMessage'] = "Welcome " . $_SESSION['uname'];
-        
         $_SESSION['adminFlag'] = 1;
         
         header("Location: admin.php");
-    }
-        
-     
-        
-        
-     else {
+		
+    } else {
     
-    $query = "select count(*) from credentials where username = '" . $username . "' and 
-    password = sha1('" . $password . "')";
-    
-    $result = mysqli_query($connection, $query);
+	    $query = "select count(*) from credentials where username = '" . $username . "' and 
+	    password = sha1('" . $password . "')";
+	    
+	    $result = mysqli_query($connection, $query);
     
     if(!$result) {
         
-        echo "Cannot run query.";
+        $_SESSION["message"] = "ERROR: Cannot run query.";
+		header("Location: ../index.php");
         exit;
-        
+  
     }
     
     $row = mysqli_fetch_row($result);
@@ -116,37 +71,19 @@ if(isset($_SESSION['logoutMessage'])) {
     
     if($count > 0) {
         
-        $_SESSION['uname'] = $username;
-        
+        $_SESSION['uname'] = $username;        
         $_SESSION['confirmMessage'] = "Welcome " . $_SESSION['uname'];
-        
         $_SESSION['adminFlag'] = 0;
         
-        header("Location: ../index.php");
+        header("Location: ../plans/viewPlan.php");
         
-    }
-    
-   
-      else {
-           
-        
-        ?>
-        
-        <div class ="mainContent">
-        	Your username or password are not correct. Please try again. <br /><br>
-        	<a href = "login.php">Back to Login</a>       
-        </div>
+    }	else {
+      	
+		$_SESSION["message"] = "Your username or password are not correct. Please try again..";
+		header("Location: ../index.php");
+        exit;
        
-   <?php 
-       
-         }
+        }
     }
 }
-
-
 ?>
-
-
-</body>
-
-</html>

@@ -38,6 +38,28 @@ form.login label {
 	text-align: right;
 }
 
+form.change-password {
+	width: 40em;
+	margin-left: 20%;
+	
+}
+
+form.change-password label {
+	margin-right: .5em;
+	display: inline-block;
+	width: 15em;
+	text-align: right;
+}
+
+.fieldset {
+	margin-left: 2em;	
+}
+
+.fields {
+	margin: .3em;
+	padding: .5em;
+}
+
 .formButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;

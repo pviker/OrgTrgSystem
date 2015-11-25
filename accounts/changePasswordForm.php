@@ -8,8 +8,9 @@
  * Description: This is the form for changing a password
  *   
  * */
-
+ 
  require("../includes/header.php");
+ require("../includes/topmenu.php");
  require("../controllers/db2.php");
   
  if(!isset($_SESSION)) {
@@ -41,9 +42,11 @@
 
 ?>
 
-<form name="changePassword" action="changePassword.php" method="post">
+	<div class="main-content-wrapper" >
+
+		<form name="changePassword" action="changePassword.php" method="post" class="change-password">
             
-            <fieldset id="field1">
+            <fieldset id="field1" class="fieldset">
                 <legend>Change Password</legend>
 
                 <label>Old Password:</label><input type="password" name="oldPassword" placeholder="Enter old password" size="25" class="fields" id="oldPass" /><br />
@@ -51,14 +54,16 @@
                 <label>Confirm New Password:</label><input type="password" name="confirmPassword" placeholder="Confirm new password" size="25" class="fields" id="confirmPass" /><br />
 
             </fieldset>
-
+			<br />
             <div class="buttons">
-                <input type="submit" class="buttons" name="Send" alt="Send" value="Send" />
-                <input type="reset" class="buttons" name="Reset" value="Reset" />
+                <input type="submit" class="formButton" name="Send" alt="Send" value="Send" />
+                <input type="reset" class="formButton" name="Reset" value="Reset" />
             </div> 
 
             
         </form>
+        
+	</div>
 
 </body>
 
