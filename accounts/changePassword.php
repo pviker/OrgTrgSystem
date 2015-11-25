@@ -29,6 +29,8 @@
     
     }
  
+     passwordValidate($newPassword);
+     
      $passQuery = "select password from credentials where username='" . $_SESSION['uname'] . "'";
      
      $passResult = mysqli_query($connection, $passQuery);
@@ -52,17 +54,31 @@
      
         } else {
      
-     echo "Passwords do not match. Please try again.<br>";
-     echo "<a href = \"changePasswordForm.php\">Back to change password</a>";
+     $_SESSION['passNotMatch'] = "Passwords do not match. Please try again.<br>";
+     header("Location: changePasswordForm.php");
      
         }
         
       }  else {
      
-     echo "Passwords do not match. Please try again.<br>";
-     echo "<a href = \"changePasswordForm.php\">Back to change password</a>";
+    $_SESSION['passNotMatch'] = "Passwords do not match. Please try again.<br>";
+     header("Location: changePasswordForm.php");
      
         }
 
+
+function passwordValidate($newPassIn) {
+    
+    if($newPassIn === "") {
+        
+        $_SESSION['blankPassMessage'] = "Password cannot be blank. ";
+        header("Location: changePasswordForm.php");
+        exit;
+        
+       
+    }
+    
+    
+}
 
 ?>

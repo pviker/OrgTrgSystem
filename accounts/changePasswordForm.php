@@ -20,6 +20,18 @@
  if(!isset($_SESSION['uname'])) {
      header("Location: login.php");
  }
+ 
+ if(isset($_SESSION['blankPassMessage'])) {
+     
+     echo $_SESSION['blankPassMessage'];
+     unset($_SESSION['blankPassMessage']);
+ }
+ 
+ if(isset($_SESSION['passNotMatch'])) {
+     
+     echo $_SESSION['passNotMatch'];
+     unset($_SESSION['passNotMatch']);
+ }
 
 ?>
 
