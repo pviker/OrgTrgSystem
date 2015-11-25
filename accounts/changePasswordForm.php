@@ -32,6 +32,12 @@
      echo $_SESSION['passNotMatch'];
      unset($_SESSION['passNotMatch']);
  }
+ 
+ if(isset($_SESSION['passLengthMessage'])) {
+     
+     echo $_SESSION['passLengthMessage'];
+     unset($_SESSION['passLengthMessage']);
+ }
 
 ?>
 
