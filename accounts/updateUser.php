@@ -27,9 +27,19 @@
 ?>
 		     
 	<div class="main-content-wrapper">
-		You have successfully updated user: <?php echo $username ?><br /><br />
-		Would you like to change the password for the user? <br />
-		<a href="#?id=<?php echo $employeeID ?>">YES</a> | <a href="manageUsers.php">NO</a>
+		<strong><?php echo $username ?></strong>, has been successfully updated.<br /><br />
+		Would you also like to change the password for <strong><?php echo $username ?></strong>?<br />
+		<!-- <a href="#?id=<?php echo $employeeID ?>">YES</a> | <a href="manageUsers.php">NO</a> -->
+		
+		 <form class="edit-user-form" name="editPassowrd" action="changePasswordForm.php" method="post">
+            
+            <fieldset class="fieldset" style="border: none">
+            	<input type="hidden" name="employeeID" value="<?php echo $employeeID ?>" /><br />
+               	<input type="submit" name="updateUser" value="Yes, update password" class="formButton">
+               	<a href="admin.php" class="formButton">No, take me to the admin page</a>
+       		</fieldset>
+    	</form>
+		
 	</div>
 <?php
 		}

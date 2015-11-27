@@ -22,27 +22,31 @@
      header("Location: login.php");
  }
  
+ $msg = "";
+ 
  if(isset($_SESSION['blankPassMessage'])) {
      
-     echo $_SESSION['blankPassMessage'];
+     $msg = $_SESSION['blankPassMessage'];
      unset($_SESSION['blankPassMessage']);
  }
  
  if(isset($_SESSION['passNotMatch'])) {
      
-     echo $_SESSION['passNotMatch'];
+     $msg = $_SESSION['passNotMatch'];
      unset($_SESSION['passNotMatch']);
  }
  
  if(isset($_SESSION['passLengthMessage'])) {
      
-     echo $_SESSION['passLengthMessage'];
+     $msg = $_SESSION['passLengthMessage'];
      unset($_SESSION['passLengthMessage']);
  }
 
 ?>
 
 	<div class="main-content-wrapper" >
+		
+		<?php echo $msg ?>
 
 		<form name="changePassword" action="changePassword.php" method="post" class="change-password">
             

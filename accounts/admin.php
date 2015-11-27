@@ -8,7 +8,7 @@
 	<div class="main-content-wrapper">
 		
 		<div>
-			<a href="manageUsers.php">Manage Users</a>
+			<a href="manageUsers.php" class="formButton">Manage Users</a>
 		</div>
 		
 	</div>
