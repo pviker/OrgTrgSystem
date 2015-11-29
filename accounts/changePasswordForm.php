@@ -46,16 +46,49 @@
 
 	<div class="main-content-wrapper" >
 		
-		<?php echo $msg ?>
+		<?php 
+		
+			echo $msg;
+			
+			$actionURL = "";
+			if(isset($_POST['employeeID']) || isset($_SESSION['employeeID'])){
+				$actionURL = "adminChangePassword.php";
+			} else {
+				$actionURL = "changePassword.php";
+				$user = $_SESSION['uname'];
+			}
+			
+			if(isset($_SESSION['employeeID'])){
+				$user = $_SESSION['employeeID'];
+			} else if(isset($_POST['employeeID'])) {
+				$user = $_POST['employeeID'];
+			}
+			
+		?>
 
-		<form name="changePassword" action="changePassword.php" method="post" class="change-password">
+		<form name="changePassword" action="<?php echo $actionURL; ?>" method="post" class="change-password">
             
             <fieldset id="field1" class="fieldset">
-                <legend>Change Password</legend>
+                <legend>Change Password for employee: <?php echo $user; ?></legend>
+                
+                <?php 
+                	if(isset($_POST['employeeID'])){
+                		$employeeID = $_POST['employeeID'];
+                	} else if (isset($_SESSION['employeeID'])) {
+                		$employeeID = $_SESSION['employeeID'];
+                	}
+                
+                	if(isset($employeeID)){ 
+                ?>
+               		<input type="hidden" name="employeeID" value="<?php echo $employeeID; ?>">
+                <?php } ?>
 
-                <label>Old Password:</label><input type="password" name="oldPassword" placeholder="Enter old password" size="25" class="fields" id="oldPass" /><br />
-                <label>New Password:</label><input type="password" name="newPassword" placeholder="Enter new password" size="25" class="fields" id="newPass" /><br />
-                <label>Confirm New Password:</label><input type="password" name="confirmPassword" placeholder="Confirm new password" size="25" class="fields" id="confirmPass" /><br />
+                <label>Old Password:</label>
+                	<input type="password" name="oldPassword" placeholder="Enter old password" size="25" class="fields" id="oldPass" /><br />
+                <label>New Password:</label>
+                	<input type="password" name="newPassword" placeholder="Enter new password" size="25" class="fields" id="newPass" /><br />
+                <label>Confirm New Password:</label>
+                	<input type="password" name="confirmPassword" placeholder="Confirm new password" size="25" class="fields" id="confirmPass" /><br />
 
             </fieldset>
 			<br />

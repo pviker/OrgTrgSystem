@@ -17,20 +17,23 @@
 ?>
 
 	<div class="main-content-wrapper">
-		<h1>Administration Page</h1>
 		
-		<div><h3>
+		<div>
 			<?php if(isset($_SESSION['message'])){
 						echo $_SESSION['message'];
 						unset($_SESSION['message']);
 			 		} 
 			 ?>
-		</h3></div>
+		</div>
 		
 		<div>
-			<span><a href="manageUsers.php" class="formButton">Manage Users</a></span>
-			<span><a href="../plans/setOrgTemp.php" class="formButton">Set Organization Template</a></span>
-			<!-- <span><a href="manageUsers.php" class="formButton">Manage Users</a></span> -->
+			Select year: <select></select>
+		</div>
+		
+		<div>
+			<!-- <span><a href="manageUsers.php" class="formButton">Manage Users</a></span>
+			<span><a href="setOrgTemp.php" class="formButton">Set Organization Template</a></span>
+			<span><a href="manageUsers.php" class="formButton">Manage Users</a></span> -->
 		</div>
 		
 	</div>

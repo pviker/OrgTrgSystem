@@ -16,7 +16,11 @@
  if(!isset($_SESSION)) {
      session_start();
  }
-  
+   
+ if(isset($_POST['employeeID'])){
+ 	$_SESSION['employeeID'] = $_POST['employeeID'];
+	header("Location: adminChangePassword.php");
+ }
  
  if(!isset($_SESSION['uname'])) {
      header("Location: login.php");
@@ -29,6 +33,8 @@
     $confirmPassword = $_POST['confirmPassword'];
     
     }
+ 
+
  
      passwordValidate($newPassword);
      

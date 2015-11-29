@@ -30,7 +30,7 @@
     $results = mysqli_query($connection, $userInfoQuery);
      
 ?>
-     <h1 class="center">Current Employees</h1>
+     <h1 class="center">Manage Current Employees</h1>
      
      <div class="user-table">
      	
@@ -39,7 +39,7 @@
              <tr>
                  
                  <td>User name</td>
-                 <td>Password</td>
+                 <!-- <td>Password</td> -->
                  <td>Admin</td>
                  <td>Name</td>
                  <td>Email</td>
@@ -66,7 +66,7 @@
                  echo "<tr>
                  		
                  		<td>" . $row["username"] . "</td>
-                 		<td>" . $row["id"] . "</td>
+
                  		<td>" . $admin . "</td>
                  		<td>" . $row["name"] . "</td>
                  		<td>" . $row["email"] . "</td>
