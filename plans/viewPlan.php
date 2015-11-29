@@ -7,7 +7,7 @@
 
 <div class="main-content-wrapper">
 	
-	VIEW PLAN!
+	<h1>Current Plan</h1>
 	
 </div>
 
