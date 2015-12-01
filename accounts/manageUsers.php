@@ -34,7 +34,7 @@
      
      
      <div class="right-align bottom-margin">
-     	<strong><a href="generateEmployeeReport.php" class="formButton" target="_blank">Generate report</a></strong>
+     	<strong><a href="addUser.php" class="formButton" target="_blank">Add new employee</a></strong>
      </div>
      
      <div class="user-table">
