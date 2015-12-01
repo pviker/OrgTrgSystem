@@ -26,7 +26,7 @@
 			 ?>
 		</div>
 		
-		<div>
+		<div><!-- Probably not needed for the admin template, but will be needed everywhere else -->
 			Select year: <select></select>
 		</div>
 		
