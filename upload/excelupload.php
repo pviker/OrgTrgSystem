@@ -26,15 +26,14 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
 				// $html.="</td>";
 			// }
             
-			$fname = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][1]);
-            $lname = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][2]);
-			$email = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][3]);
-            $team = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][4]);
-			$managerEmail = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][5]);
-			$role = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][6]);
+			$name = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][1]);
+			$email = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][2]);
+            $orgName = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][3]);
+			$managerEmail = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][4]);
+			$role = mysqli_real_escape_string($connection,$data->sheets[$i]['cells'][$j][5]);
             
-            $empQuery = "select first_name, last_name, email from employees where first_name='" . $fname . "' and 
-            last_name='". $lname . "' and email='". $email . "'";
+            $empQuery = "select name, email from employees where name='" . $name . "' and 
+            email='". $email . "'";
             
             $empResult = mysqli_query($connection, $empQuery);
             
@@ -43,9 +42,9 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
             
             if($count > 0) {
                 
-                $empUpdateQuery = "update employees set first_name ='". $fname . "', last_name='" . $lname . "',
-                email='" . $email . "', team='" . $team . "', manager_email='" . $managerEmail . "', role='" . $role . "' 
-                where first_name='" . $fname . "' and last_name='" . $lname . "' and email='" . $email . "'";
+                $empUpdateQuery = "update employees set name ='". $name . "',
+                email='" . $email . "', organization_name='" . $orgName . "', manager_email='" . $managerEmail . "', role='" . $role . "' 
+                where name='" . $name . "' and email='" . $email . "'";
                 
                 mysqli_query($connection, $empUpdateQuery);
                 
@@ -53,8 +52,8 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
             }  else {  
             
             
-            $empInsertQuery = "insert into employees(first_name, last_name, email, team, manager_email, role) 
-			values ('".$fname."','".$lname."','".$email."','".$team."','".$managerEmail."','".$role."')";
+            $empInsertQuery = "insert into employees(name, email, organization_name, manager_email, role) 
+			values ('".$name."','".$email."','".$orgName."','".$managerEmail."','".$role."')";
             
             mysqli_query($connection, $empInsertQuery);
             
