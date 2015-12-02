@@ -32,14 +32,24 @@
 	    password = sha1('" . $password . "') and admin = '1'";
 	    
 	    $result = mysqli_query($connection, $adminQuery);
+        
+        $userInfoQuery = "select organization_name, role from employees, credentials where employees.id=credentials.id 
+        and credentials.username='" . $username . "'";
+        
+        $userInfoResult = mysqli_query($connection, $userInfoQuery);
           
-   		if(!$result) {
+   		if(!$result || !$userInfoResult) {
         
 	        $_SESSION["message"] = "ERROR: Cannot run query.";
 			header("Location: ../index.php");
 	        exit; 
     	}
+    	
+    $userRow = mysqli_fetch_assoc($userInfoResult);
     
+    $_SESSION['orgName'] = $userRow['organization_name'];
+    $_SESSION['role'] = $userRow['role'];
+        
     $row = mysqli_fetch_row($result);
     $count = $row[0];
     
@@ -57,14 +67,23 @@
 	    password = sha1('" . $password . "')";
 	    
 	    $result = mysqli_query($connection, $query);
-    
-    if(!$result) {
         
-        $_SESSION["message"] = "ERROR: Cannot run query.";
-		header("Location: ../index.php");
-        exit;
-  
-    }
+        $userInfoQuery = "select organization_name, role from employees, credentials where employees.id=credentials.id 
+        and credentials.username='" . $username . "'";
+        
+        $userInfoResult = mysqli_query($connection, $userInfoQuery);
+    
+    if(!$result || !$userInfoResult) {
+        
+            $_SESSION["message"] = "ERROR: Cannot run query.";
+            header("Location: ../index.php");
+            exit; 
+        }
+    
+    $userRow = mysqli_fetch_assoc($userInfoResult);
+    
+    $_SESSION['orgName'] = $userRow['organization_name'];
+    $_SESSION['role'] = $userRow['role'];
     
     $row = mysqli_fetch_row($result);
     $count = $row[0];

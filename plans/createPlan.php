@@ -14,13 +14,43 @@
 		header ('Location:../index.php'); 
     }
 	
-	$username= $_SESSION['uname']; 
-	$idQuery = "SELECT id FROM credentials WHERE username = '".$username."'" ; 
-	$result = mysqli_query($connection, $idQuery);
-	$row = mysqli_fetch_row($result);
-    $userid = $row[0];
-	// echo $userid; 
+
+    if($_SESSION['role'] == "Employee") {
+    
 ?>
+
+
+
+<div class="sourceButtonDivEmployee">
+    
+<form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+<input type="submit" name="sources" value="Peers" class="sourceButtons">
+<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
+<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
+<input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
+
+</form>
+
+</div>
+
+<?php } else if($_SESSION['role'] == "CEO") { ?>
+    
+<div class="sourceButtonDivCEO">
+    
+<form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+<input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
+<input type="submit" name="sources" value="Peers" class="sourceButtons">
+<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
+<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
+<!-- <input type="submit" name="sources" value="Supervisor Template" class="sourceButtons"> -->
+
+</form>
+
+</div>
+
+<?php } else { ?>
 
 <div class="sourceButtonDiv">
     
@@ -35,6 +65,8 @@
 </form>
 
 </div>
+
+<?php } ?>
 
 <br><br><br>
 
