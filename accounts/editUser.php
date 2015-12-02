@@ -69,7 +69,15 @@
                    <input type="text" name="email" class="fields" value="<?php echo $email ?>" size="25"><br>
                    
                <label>Organization:</label>
-                   <input type="text" name="orgName" class="fields" value="<?php echo $orgName ?>" size="25"><br>
+                   <!-- <input type="text" name="orgName" class="fields" value="<?php echo $orgName ?>" size="25"><br> -->
+                    <select name="orgName">      
+                    <option value="CEO" <?php if($orgName == "CEO") {echo "selected";} ?> >CEO</option>
+                    <option value="QA" <?php if($orgName == "QA") {echo "selected";} ?> >QA</option>
+                    <option value="HR" <?php if($orgName == "HR") {echo "selected";} ?> >HR</option>
+                    <option value="Software" <?php if($orgName == "Software") {echo "selected";} ?> >Software</option>
+                    <option value="Admin" <?php if($orgName == "Admin") {echo "selected";} ?> >Admin</option>
+                   
+                  </select><br />
                    
                <label>Role:</label>
                   <select name="role">      

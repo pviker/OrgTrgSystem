@@ -5,11 +5,11 @@
 	require("../includes/topmenu.php");
     
     
-     if(isset($_SESSION['passConfirmMessage'])) {
-        
-        echo $_SESSION['passConfirmMessage'];
-        unset($_SESSION['passConfirmMessage']);
-     }
+     // if(isset($_SESSION['passConfirmMessage'])) {
+//         
+        // echo $_SESSION['passConfirmMessage'];
+        // unset($_SESSION['passConfirmMessage']);
+     // }
      
     $username= $_SESSION['uname']; 
     $idQuery = "select id from credentials where username = '".$username."'" ; 
@@ -17,14 +17,31 @@
     $row = mysqli_fetch_assoc($result);
     $_SESSION['userID'] = $row['id'];
     
-    $planQuery = "select plan from plans where employee_id='" . $_SESSION['userID'] . "' and pyear='2015'";
+    if($_SESSION['role'] == "Employee") {
+        
+       $planQuery = "select plan from plans where employee_id='" . $_SESSION['userID'] . "' and pyear='2015'";
     
-    $planResult = mysqli_query($connection, $planQuery);
+       $planResult = mysqli_query($connection, $planQuery);
     
-    $planRow = mysqli_fetch_assoc($planResult);
+       $planRow = mysqli_fetch_assoc($planResult);
     
-    $plan = $planRow['plan'];
+       $plan = $planRow['plan'];
     
+       if(strtoupper($plan) == "NULL") {
+        
+        header("Location: createPlan.php");
+        exit;
+       }
+    
+    }
+    
+    // if($_SESSION['role'] == "") {
+//                 
+//             
+//         
+//             
+//         
+    // }
      
     
 ?>

@@ -25,7 +25,7 @@
     
     //Query for user info
     $userInfoQuery = "select credentials.id, username, admin, name, email, organization_name, role, manager_email
-    					 from credentials, employees where credentials.id = employees.id order by role";
+    					 from credentials, employees where credentials.id = employees.id order by organization_name, role";
      
     $results = mysqli_query($connection, $userInfoQuery);
      
