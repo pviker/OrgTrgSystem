@@ -17,7 +17,7 @@
     $row = mysqli_fetch_assoc($result);
     $_SESSION['userID'] = $row['id'];
     
-    if($_SESSION['role'] == "Employee") {
+    // if($_SESSION['role'] == "Employee") {
         
        $planQuery = "select plan from plans where employee_id='" . $_SESSION['userID'] . "' and pyear='2015'";
     
@@ -33,7 +33,7 @@
         exit;
        }
     
-    }
+    // }
     
     // if($_SESSION['role'] == "") {
 //                 
