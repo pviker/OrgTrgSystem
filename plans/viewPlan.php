@@ -49,6 +49,8 @@
        
        $drResult = mysqli_query($connection, $drQuery);
        
+       $drPlan = "";
+       
        while($drRow = mysqli_fetch_assoc($drResult)) {
                    
              $drPlanQuery = "select plan from plans where employee_id = '" . $drRow['id'] . "' and pyear='2015'";
@@ -57,7 +59,7 @@
              
              $drPlanRow = mysqli_fetch_assoc($drPlanResult);
              
-             $drPlan = $drPlanRow['plan'];
+             $drPlan .= $drPlanRow['plan'] . "\n\n";
            
        }
        
