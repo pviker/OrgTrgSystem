@@ -10,7 +10,6 @@
         unset($_SESSION['passConfirmMessage']);
      }
 	 
-	 
 	 // formatted session var dump script
 //	include("../misc_files/seshVarDumpFn.php");
      
