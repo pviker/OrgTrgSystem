@@ -19,8 +19,6 @@
     
 ?>
 
-
-
 <div class="sourceButtonDivEmployee">
     
 <form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
@@ -44,7 +42,6 @@
 <input type="submit" name="sources" value="Peers" class="sourceButtons">
 <input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
 <input type="submit" name="sources" value="Previous Years" class="sourceButtons">
-<!-- <input type="submit" name="sources" value="Supervisor Template" class="sourceButtons"> -->
 
 </form>
 
