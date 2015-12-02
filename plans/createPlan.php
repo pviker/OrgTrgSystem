@@ -21,14 +21,14 @@
 
 <div class="sourceButtonDivEmployee">
     
-<form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
-<input type="submit" name="sources" value="Peers" class="sourceButtons">
-<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
-<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
-<input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
-
-</form>
+	<form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+								
+		<input type="submit" name="sources" value="Peers" class="sourceButtons">
+		<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
+		<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
+		<input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
+					
+	</form>
 
 </div>
 
@@ -36,14 +36,14 @@
     
 <div class="sourceButtonDivCEO">
     
-<form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
-<input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
-<input type="submit" name="sources" value="Peers" class="sourceButtons">
-<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
-<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
-
-</form>
+	<form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+	
+		<input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
+		<input type="submit" name="sources" value="Peers" class="sourceButtons">
+		<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
+		<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
+		
+	</form>
 
 </div>
 
@@ -51,15 +51,15 @@
 
 <div class="sourceButtonDiv">
     
-<form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-
-<input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
-<input type="submit" name="sources" value="Peers" class="sourceButtons">
-<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
-<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
-<input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
-
-</form>
+	<form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+	
+		<input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
+		<input type="submit" name="sources" value="Peers" class="sourceButtons">
+		<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
+		<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
+		<input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
+		
+	</form>
 
 </div>
 
@@ -71,7 +71,7 @@
 
 <div class="textArea">
     
-<textarea name="planSource" rows='30' cols='75' readonly></textarea>
+	<textarea name="planSource" rows='30' cols='75' readonly></textarea>
 
 </div>
 

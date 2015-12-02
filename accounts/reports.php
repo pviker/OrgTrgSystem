@@ -25,10 +25,10 @@
 		</div>
 		
 		<div>
-			<span><a href="generateEmployeeReport.php" class="formButton">All Employees</a></span>
-			<span><a href="#" class="formButton">Employees without a manager</a></span><br /><br />
-			<span><a href="#" class="formButton">Managers without training plans for selected year</a></span>
-			<span><a href="#" class="formButton">All employees without training plans for selected year</a></span>
+			<span><a href="generateEmployeeReport.php" target="_blank" class="formButton">All Employees</a></span>
+			<span><a href="#" target="_blank" class="formButton">Employees without a manager</a></span><br /><br />
+			<span><a href="#" target="_blank" class="formButton">Managers without training plans for selected year</a></span>
+			<span><a href="#" target="_blank" class="formButton">All employees without training plans for selected year</a></span>
 		</div>
 		
 	</div> <!-- /container -->

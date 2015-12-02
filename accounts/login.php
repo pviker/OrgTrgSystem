@@ -65,6 +65,7 @@
 	        $_SESSION['uname'] = $username;
 	        $_SESSION['confirmMessage'] = "Welcome " . $_SESSION['uname'];
 	        $_SESSION['adminFlag'] = 1;
+	        $_SESSION['currentYear'] = 2015;
 
 	        header("Location: admin.php");
 			
@@ -108,6 +109,7 @@
 		        $_SESSION['uname'] = $username;        
 		        $_SESSION['confirmMessage'] = "Welcome " . $_SESSION['uname'];
 		        $_SESSION['adminFlag'] = 0;
+		        $_SESSION['currentYear'] = 2015;
 		        
 		        header("Location: ../plans/viewPlan.php");
 		        

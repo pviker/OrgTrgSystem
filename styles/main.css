@@ -34,12 +34,22 @@ body {
 }
 
 div.top-menu {
-	position: fixed;
+	position: absolute;
 	top: 1em;
 	right: 1em;
-	z-index: 1000;
+	z-index: -1;
 	/*border: 2px solid white;*/
 	padding: 3px;
+}
+
+div.current-year {
+	position: absolute;
+	top: 1em;
+	left: 1em;
+}
+
+span.small-link {
+	font-size: 8px;
 }
 
 h1.center{
@@ -373,4 +383,10 @@ form.edit-user-form select {
 	
 	margin-top: 7%;
 	margin-left: 45.5%;
+}
+
+.orgTempTxtArea {
+	position: absolute;
+	left: 31%;
+	
 }

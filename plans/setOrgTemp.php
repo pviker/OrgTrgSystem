@@ -19,21 +19,20 @@
 	<div class="main-content-wrapper">
 		
 		<div>
-			<?php if(isset($_SESSION['message'])){
+			<?php 
+				if(isset($_SESSION['message'])){
 						echo $_SESSION['message'];
 						unset($_SESSION['message']);
-			 		} 
+			 	} 
 			 ?>
 		</div>
 		
-		<div><!-- Probably not needed for the admin template, but will be needed everywhere else -->
-			Select year: <select></select>
-		</div>
-		
 		<div>
-			<!-- <span><a href="manageUsers.php" class="formButton">Manage Users</a></span>
-			<span><a href="setOrgTemp.php" class="formButton">Set Organization Template</a></span>
-			<span><a href="manageUsers.php" class="formButton">Manage Users</a></span> -->
+			<h3 id="">Create your organization template:</h3>
+			<form method="post" class="orgTempTxtArea" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+			    <textarea name="createPlan" rows = '30' cols = '75' placeholder="Enter new plan here"></textarea><br>
+			    <input name="submit" type="submit" value="Submit Plan" />
+			</form>
 		</div>
 		
 	</div>
