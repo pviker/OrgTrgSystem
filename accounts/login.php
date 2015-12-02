@@ -17,16 +17,18 @@
 	if (session_status() == PHP_SESSION_NONE) {
 	    session_start();
 	}
-
+	
 	if(isset($_POST['Send'])) {   
 		$username = $_POST['userName'];
 		$password = $_POST['password'];
 	}  
 	
-   
 	if((!isset($username)) || (!isset($password))) {
 		header("Location: ../index.php");
-	} else {
+	} 
+	
+	// if admin
+	else {
     
 	    $adminQuery = "select count(*) from credentials where username = '" . $username . "' and 
 	    password = sha1('" . $password . "') and admin = '1'";
@@ -45,64 +47,77 @@
 	        exit; 
     	}
     	
-    $userRow = mysqli_fetch_assoc($userInfoResult);
-    
-    $_SESSION['orgName'] = $userRow['organization_name'];
-    $_SESSION['role'] = $userRow['role'];
-        
-    $row = mysqli_fetch_row($result);
-    $count = $row[0];
-    
-    if($count > 0) {
-        
-        $_SESSION['uname'] = $username;
-        $_SESSION['confirmMessage'] = "Welcome " . $_SESSION['uname'];
-        $_SESSION['adminFlag'] = 1;
-        
-        header("Location: admin.php");
-		
-    } else {
-    
-	    $query = "select count(*) from credentials where username = '" . $username . "' and 
-	    password = sha1('" . $password . "')";
+	    $userRow = mysqli_fetch_assoc($userInfoResult);
 	    
-	    $result = mysqli_query($connection, $query);
-        
-        $userInfoQuery = "select organization_name, role from employees, credentials where employees.id=credentials.id 
-        and credentials.username='" . $username . "'";
-        
-        $userInfoResult = mysqli_query($connection, $userInfoQuery);
-    
-    if(!$result || !$userInfoResult) {
-        
-            $_SESSION["message"] = "ERROR: Cannot run query.";
-            header("Location: ../index.php");
-            exit; 
-        }
-    
-    $userRow = mysqli_fetch_assoc($userInfoResult);
-    
-    $_SESSION['orgName'] = $userRow['organization_name'];
-    $_SESSION['role'] = $userRow['role'];
-    
-    $row = mysqli_fetch_row($result);
-    $count = $row[0];
-    
-    if($count > 0) {
-        
-        $_SESSION['uname'] = $username;        
-        $_SESSION['confirmMessage'] = "Welcome " . $_SESSION['uname'];
-        $_SESSION['adminFlag'] = 0;
-        
-        header("Location: ../plans/viewPlan.php");
-        
-    }	else {
-      	
-		$_SESSION["message"] = "Your username or password are not correct. Please try again.";
-		header("Location: ../index.php");
-        exit;
-       
-        }
-    }
+	    $_SESSION['orgName'] = $userRow['organization_name'];
+	    $_SESSION['role'] = $userRow['role'];
+	        
+	    $row = mysqli_fetch_row($result);
+	    $count = $row[0];
+	    
+	    if($count > 0) {
+	    	
+		    $idQuery = "select id from credentials where username = '".$username."'" ; 
+		    $result = mysqli_query($connection, $idQuery);
+		    $row = mysqli_fetch_assoc($result);
+		    
+		    $_SESSION['userID'] = $row['id'];
+	        $_SESSION['uname'] = $username;
+	        $_SESSION['confirmMessage'] = "Welcome " . $_SESSION['uname'];
+	        $_SESSION['adminFlag'] = 1;
+
+	        header("Location: admin.php");
+			
+	    } 
+	    
+	    // not an admin
+	    else {
+	    
+		    $query = "select count(*) from credentials where username = '" . $username . "' and 
+		    password = sha1('" . $password . "')";
+		    
+		    $result = mysqli_query($connection, $query);
+	        
+	        $userInfoQuery = "select organization_name, role from employees, credentials where employees.id=credentials.id 
+	        and credentials.username='" . $username . "'";
+	        
+	        $userInfoResult = mysqli_query($connection, $userInfoQuery);
+	    
+		    if(!$result || !$userInfoResult) {
+		        
+		            $_SESSION["message"] = "ERROR: Cannot run query.";
+		            header("Location: ../index.php");
+		            exit; 
+		    }
+	    
+		    $userRow = mysqli_fetch_assoc($userInfoResult);
+		    
+		    $_SESSION['orgName'] = $userRow['organization_name'];
+		    $_SESSION['role'] = $userRow['role'];
+		    
+		    $row = mysqli_fetch_row($result);
+		    $count = $row[0];
+		    
+		    if($count > 0) {
+		  
+			    $idQuery = "select id from credentials where username = '".$username."'" ; 
+			    $result = mysqli_query($connection, $idQuery);
+			    $row = mysqli_fetch_assoc($result);
+				
+			    $_SESSION['userID'] = $row['id']; 
+		        $_SESSION['uname'] = $username;        
+		        $_SESSION['confirmMessage'] = "Welcome " . $_SESSION['uname'];
+		        $_SESSION['adminFlag'] = 0;
+		        
+		        header("Location: ../plans/viewPlan.php");
+		        
+		    }	else {
+		      	
+				$_SESSION["message"] = "Your username or password are not correct. Please try again.";
+				header("Location: ../index.php");
+		        exit;
+		       
+		        }
+		    }
 }
 ?>
