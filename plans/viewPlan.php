@@ -19,7 +19,7 @@
     
     if($_SESSION['role'] == "Employee") {
         
-       $planQuery = "select plan from plans where employee_id='" . $_SESSION['userID'] . "' and pyear='2015'";
+       $planQuery = "select plan from plans where id='" . $_SESSION['userID'] . "' and pyear='2015'";
     
        $planResult = mysqli_query($connection, $planQuery);
     
@@ -37,7 +37,7 @@
     
     if($_SESSION['role'] == "Team Lead" && $_SESSION['orgName'] == "Software") {
                 
-       $selfPlanQuery = "select plan from plans where employee_id='" . $_SESSION['userID'] . "' and pyear='2015'";
+       $selfPlanQuery = "select plan from plans where id='" . $_SESSION['userID'] . "' and pyear='2015'";
     
        $selfPlanResult = mysqli_query($connection, $selfPlanQuery);
     
@@ -53,7 +53,7 @@
        
        while($drRow = mysqli_fetch_assoc($drResult)) {
                    
-             $drPlanQuery = "select plan from plans where employee_id = '" . $drRow['id'] . "' and pyear='2015'";
+             $drPlanQuery = "select plan from plans where id = '" . $drRow['id'] . "' and pyear='2015'";
            
              $drPlanResult = mysqli_query($connection, $drPlanQuery);
              
