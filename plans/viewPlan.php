@@ -5,11 +5,11 @@
 	require("../includes/topmenu.php");
     
     
-     // if(isset($_SESSION['passConfirmMessage'])) {
-//         
-        // echo $_SESSION['passConfirmMessage'];
-        // unset($_SESSION['passConfirmMessage']);
-     // }
+     if(isset($_SESSION['passConfirmMessage'])) {
+        
+        echo $_SESSION['passConfirmMessage'];
+        unset($_SESSION['passConfirmMessage']);
+     }
      
     $username= $_SESSION['uname']; 
     $idQuery = "select id from credentials where username = '".$username."'" ; 
@@ -17,7 +17,7 @@
     $row = mysqli_fetch_assoc($result);
     $_SESSION['userID'] = $row['id'];
     
-    // if($_SESSION['role'] == "Employee") {
+    if($_SESSION['role'] == "Employee") {
         
        $planQuery = "select plan from plans where employee_id='" . $_SESSION['userID'] . "' and pyear='2015'";
     
@@ -33,15 +33,35 @@
         exit;
        }
     
-    // }
+    }
     
-    // if($_SESSION['role'] == "") {
-//                 
-//             
-//         
-//             
-//         
-    // }
+    if($_SESSION['role'] == "Team Lead" && $_SESSION['orgName'] == "Software") {
+                
+       $selfPlanQuery = "select plan from plans where employee_id='" . $_SESSION['userID'] . "' and pyear='2015'";
+    
+       $selfPlanResult = mysqli_query($connection, $selfPlanQuery);
+    
+       $selfPlanRow = mysqli_fetch_assoc($selfPlanResult);
+    
+       $selfPlan = $selfPlanRow['plan'];
+        
+       $drQuery = "select id from employees where organization_name = 'Software' and role = 'Employee'";
+       
+       $drResult = mysqli_query($connection, $drQuery);
+       
+       while($drRow = mysqli_fetch_assoc($drResult)) {
+                   
+             $drPlanQuery = "select plan from plans where employee_id = '" . $drRow['id'] . "' and pyear='2015'";
+           
+             $drPlanResult = mysqli_query($connection, $drPlanQuery);
+             
+             $drPlanRow = mysqli_fetch_assoc($drPlanResult);
+             
+             $drPlan = $drPlanRow['plan'];
+           
+       }
+       
+     }
      
     
 ?>
@@ -50,7 +70,30 @@
 
 <div class="textArea">
     
-<textarea name="planSource" rows='30' cols='75' readonly><?php echo $plan ?></textarea>
+<textarea name="planSource" rows='30' cols='75' readonly>
+    
+   <?php 
+   
+   if(isset($plan)) {
+       
+       echo $plan . "\n\n";
+       
+   }  
+   
+   if(isset($selfPlan)) {
+       
+       echo $selfPlan . "\n\n";
+       
+   }
+   
+   if(isset($drPlan)) {
+       
+       echo $drPlan . "\n\n";
+   }
+   
+   ?>
+    
+</textarea>
 
 </div>
 	
