@@ -3,10 +3,9 @@
     require("../controllers/db2.php");
 	require("../includes/header.php");
 	require("../includes/topmenu.php");
-    foreach (glob("../includes/viewPlans/*.php") as $filename)
-{
-    require $filename;
-}
+    foreach (glob("../includes/viewPlans/*.php") as $filename){
+	    require $filename;
+	}
     
     
      if(isset($_SESSION['passConfirmMessage'])) {
@@ -77,7 +76,6 @@
     </p>
   </div>
 </div>
-
 <?php } ?>
 	
 	<a href="createPlan.php" id="createLink">Create Plan</a>

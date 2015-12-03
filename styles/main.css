@@ -33,6 +33,12 @@ body {
 	text-align: center;
 }
 
+div.accordion-container {
+	width: 50em;
+	margin: 5em;
+	padding: 10em;
+}
+
 div.top-menu {
 	position: absolute;
 	top: 1em;
