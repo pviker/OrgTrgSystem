@@ -393,7 +393,7 @@ form.edit-user-form select {
 
 #createLink {
 	
-	margin-left: .5em;
+	margin-left: 7.8em;
 	text-decoration: underline;
 	
 }
@@ -402,5 +402,7 @@ form.edit-user-form select {
 	
 	margin-top: 5em;
 	margin-bottom: 1.5em;
+	margin-left: 7em;
+	margin-right: 7em;
 	
 }
