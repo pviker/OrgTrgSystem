@@ -65,7 +65,7 @@
 
 <?php } ?>
 
-<br><br><br>
+<br />
 
 <h3 id="textArea1H3">Plan Source:</h3>
 
@@ -89,9 +89,9 @@
 <form method="post" class="textArea" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 	
     <textarea name="createPlan" rows = '30' cols = '75' placeholder="Enter new plan here"></textarea><br>
-    <input name="submit" type="submit" value="Submit Plan" />
+    <input name="submit" type="submit" value="Submit Plan" class="formButton" />
 </form>
-
+<br />
 <?php
     // if (isset($_POST['submit'])) {
 		// $year = $_POST['year']; 
