@@ -48,6 +48,8 @@
 	
 	</div>
 	
+	<a href="createPlan.php" id="createLink">Create Plan</a>
+	
 </body>
 </html>
 
