@@ -74,32 +74,29 @@
              
              <?php 
              
-             //Print rows from database records into table
-             while($row = mysqli_fetch_assoc($results)) {
-                 
-				 $delete = " | <a href='#' class='confirmDelete' onclick='alertBox(" . $row['id'] . ")'>DELETE</a>";
-				 $admin = "";
-				 if($row["admin"] == 1){
-				 	$admin = "Yes";
-				 	$delete = "";
-				 } else if($row["admin"] == 0){
-				 	$admin = "No";
-				 }
-				   
-                 echo "<tr>
-                 		
-                 		<td>" . $row["username"] . "</td>
-
-                 		<td>" . $admin . "</td>
-                 		<td>" . $row["name"] . "</td>
-                 		<td>" . $row["email"] . "</td>
-                 		<td>" . $row["organization_name"] . "</td>
-                 		<td>" . $row["role"] . "</td>
-                 		<td>" . $row["manager_email"] . "</td>                 		
-                 	   </tr>";    
-             }
-             				// backup, in case the css window popup ends up not working
-			 				//"<a href=\"\" style=\"color:black\" onclick='confirmUserDelete()'>DELETE</a>"
+	             //Print rows from database records into table
+	             while($row = mysqli_fetch_assoc($results)) {
+	                 
+					 $admin = "";
+					 if($row["admin"] == 1){
+					 	$admin = "Yes";
+					 	$delete = "";
+					 } else if($row["admin"] == 0){
+					 	$admin = "No";
+					 }
+					   
+	                 echo "<tr>
+	                 		
+	                 		<td>" . $row["username"] . "</td>
+	
+	                 		<td>" . $admin . "</td>
+	                 		<td>" . $row["name"] . "</td>
+	                 		<td>" . $row["email"] . "</td>
+	                 		<td>" . $row["organization_name"] . "</td>
+	                 		<td>" . $row["role"] . "</td>
+	                 		<td>" . $row["manager_email"] . "</td>                 		
+	                 	   </tr>";    
+	             }
              ?>
              
         </table>
