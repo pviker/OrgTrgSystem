@@ -1,6 +1,6 @@
 <?php
 
-if($_SESSION['role'] == "Team Lead") {
+if($_SESSION['role'] == "CEO") {
                 
        $selfPlanQuery = "select plan from plans where id='" . $_SESSION['userID'] . 
        "' and pyear='" . $_SESSION['currentYear'] . "'";
@@ -11,7 +11,7 @@ if($_SESSION['role'] == "Team Lead") {
     
        $selfPlan = $selfPlanRow['plan'];
         
-       $drQuery = "select id from employees where organization_name ='" . $_SESSION['orgName'] . "' and role = 'Employee'";
+       $drQuery = "select id from employees where role = 'Manager'";
        
        $drResult = mysqli_query($connection, $drQuery);
        
@@ -26,7 +26,7 @@ if($_SESSION['role'] == "Team Lead") {
              
              $drPlanRow = mysqli_fetch_assoc($drPlanResult);
              
-             $drPlan .= $drPlanRow['plan'] . "<br>";
+             $drPlan .= $drPlanRow['plan'] . "\n\n";
            
        }
        

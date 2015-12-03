@@ -393,8 +393,14 @@ form.edit-user-form select {
 
 #createLink {
 	
-	margin-top: 5em;
-	margin-left: 23.75em;
+	margin-left: .5em;
 	text-decoration: underline;
+	
+}
+
+#accordion {
+	
+	margin-top: 5em;
+	margin-bottom: 1.5em;
 	
 }
