@@ -70,7 +70,7 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
             
             mysqli_query($connection, $credInsertQuery);
             
-            $planInsertQuery = "insert into plans (employee_id, shared)
+            $planInsertQuery = "insert into plans (id, shared)
             values ('" . $last_id . "', '0')";
             
             mysqli_query($connection, $planInsertQuery);

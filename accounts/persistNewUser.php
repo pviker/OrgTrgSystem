@@ -35,9 +35,13 @@
 							
 			if(mysqli_query($connection, $insert)){
 				
-				$_SESSION['message'] = "User " . $username . ", successfully added.";
-				header("Location: manageUsers.php");
-
+				$insert = "INSERT INTO plans (id, shared)
+								VALUES ('$last_id', '0')";
+				
+				if(mysqli_query($connection, $insert)){
+					$_SESSION['message'] = "User " . $username . ", successfully added.";
+					header("Location: manageUsers.php");
+				}
 			}
 		}
 	}

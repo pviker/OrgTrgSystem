@@ -35,7 +35,9 @@
     $results = mysqli_query($connection, $userInfoQuery);
      
 ?>
-     <h1 class="center">Manage Current Employees</h1>
+
+	 <h1 class="center">Administration Page</h1>
+     <h2 class="center">Manage Current Employees</h2>
      
      
      <div class="right-align bottom-margin">
