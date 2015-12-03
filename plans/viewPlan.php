@@ -16,7 +16,9 @@
 	 
 	 // formatted session var dump script
 //	include("../misc_files/seshVarDumpFn.php");
-         
+    
+    
+    if($_SESSION['role'] == "Employee") {     
 ?>
 
 <div id="accordion">
@@ -40,6 +42,32 @@
     ?>
     </p>
   </div>
+</div>
+  <?php } else { ?>
+      
+<div id="accordion">
+  <h3>My Plan</h3>
+  <div>
+    <p>
+    <?php
+    
+    if(isset($plan)) {
+               
+           echo $plan;
+               
+           }  
+           
+           if(isset($selfPlan)) {
+               
+           echo $selfPlan;
+               
+           }
+    
+    ?>
+    </p>
+  </div>
+  
+
   <h3>Direct Reports</h3>
   <div>
     <p>
@@ -47,42 +75,15 @@
     
     if(isset($drPlan)) {
                
-               echo $drPlan;
+       echo $drPlan;
     }
     
     ?>
     </p>
   </div>
 </div>
-	
-	<!-- <h3 id="textAreaPlanH3">Current Plan:</h3>
 
-	<div class="textArea">
-	    
-		<textarea name="planSource" rows='30' cols='75' readonly><?php 
-		
-		if(isset($plan)) {
-		       
-		   echo $plan . "\n\n";
-		       
-		   }  
-		   
-		   if(isset($selfPlan)) {
-		       
-		       echo $selfPlan . "\n\n";
-		       
-		   }
-		   
-		   if(isset($drPlan)) {
-		       
-		       echo $drPlan . "\n\n";
-		   }
-		   
-		   ?>
-		    
-		</textarea>
-	
-	</div> -->
+<?php } ?>
 	
 	<a href="createPlan.php" id="createLink">Create Plan</a>
 	

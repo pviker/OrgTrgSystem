@@ -26,7 +26,7 @@ if($_SESSION['role'] == "CEO") {
              
              $drPlanRow = mysqli_fetch_assoc($drPlanResult);
              
-             $drPlan .= $drPlanRow['plan'] . "\n\n";
+             $drPlan .= $drPlanRow['plan'] . "<br>";
            
        }
        
