@@ -30,14 +30,12 @@
     if(isset($plan)) {
                
            echo $plan;
-               
-           }  
+    }  
            
-           if(isset($selfPlan)) {
+    if(isset($selfPlan)) {
                
-               echo $selfPlan;
-               
-           }
+           echo $selfPlan;
+    }
     
     ?>
     </p>
@@ -54,20 +52,17 @@
     if(isset($plan)) {
                
            echo $plan;
-               
-           }  
+    }  
            
-           if(isset($selfPlan)) {
+    if(isset($selfPlan)) {
                
            echo $selfPlan;
-               
-           }
+    }
     
     ?>
     </p>
   </div>
   
-
   <h3>Direct Reports</h3>
   <div>
     <p>
@@ -75,7 +70,7 @@
     
     if(isset($drPlan)) {
                
-       echo $drPlan;
+           echo $drPlan;
     }
     
     ?>
