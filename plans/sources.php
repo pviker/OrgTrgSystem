@@ -11,7 +11,10 @@ foreach (glob("../includes/viewPlans/*.php") as $filename)
     require $filename;
 }
 
-require("sources/sourceDR.php");
+foreach (glob("sources/*.php") as $filename)
+{
+    require $filename;
+}
 
 
 ?>
