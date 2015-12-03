@@ -19,9 +19,9 @@
 		<span> | <a href="/ics325/OrgTrgSystem/accounts/logout.php">logout</a></span>
 		<span></span>
 	</div>
-	<div class="current-year">
+	<!-- <div class="current-year">
 		Selected year: <strong><?php echo $_SESSION['currentYear']; ?></strong> <span class="small-link">(<a href="../plans/changeYear.php">change</a>)</span>
-	</div>
+	</div> -->
 	
 
 <?php
