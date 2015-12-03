@@ -7,18 +7,25 @@
 	    require $filename;
 	}
     
-    
-     if(isset($_SESSION['passConfirmMessage'])) {
-        echo $_SESSION['passConfirmMessage'];
-        unset($_SESSION['passConfirmMessage']);
-     }
-	 
 	 // formatted session var dump script
 //	include("../misc_files/seshVarDumpFn.php");
-    
+?>
+
+<div class="main-content-wrapper" style="margin-bottom: 1em;">
+	<?php
+	    if(isset($_SESSION['passConfirmMessage'])) {
+	        echo $_SESSION['passConfirmMessage'];
+	        unset($_SESSION['passConfirmMessage']);
+     	}
+	 ?>
+</div>
+
+<?php
     
     if($_SESSION['role'] == "Employee") {     
 ?>
+
+
 
 <div id="accordion">
   <h3>My Plan</h3>

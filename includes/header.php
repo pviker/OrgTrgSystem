@@ -13,6 +13,7 @@
 	
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link href="/ics325/OrgTrgSystem/styles/main.css" rel="stylesheet">
+	<link href="/ics325/OrgTrgSystem/styles/generated.css" rel="stylesheet">
 	
 	<!-- <script type="text/javascript" src="../js/confirmDelete.js"> </script> -->
 	<script type="text/javascript" src="../js/fieldValidate.js"></script>

@@ -33,6 +33,7 @@
 			<span><a href="manageUsers.php" class="formButton">Manage Users</a></span>
 			<span><a href="../plans/setOrgTemp.php" class="formButton">Set Organization Template</a></span>
 			<span><a href="reports.php" class="formButton">Generate Employee Reports</a></span>
+			<span><a href="../plans/viewPlan.php" class="formButton">View Plans</a></span>
 		</div>
 		
 	</div> <!-- /container -->

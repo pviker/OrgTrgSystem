@@ -18,6 +18,8 @@
 
 	<div class="main-content-wrapper">
 		
+		<h1>Administration Page</h1>
+		
 		<div>
 			<?php 
 				if(isset($_SESSION['message'])){
