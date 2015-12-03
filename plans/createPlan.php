@@ -21,7 +21,7 @@
 
 <div class="sourceButtonDivEmployee">
     
-	<form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+	<form name="planSources" action="sources.php" method="post">
 								
 		<input type="submit" name="sources" value="Peers" class="sourceButtons">
 		<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
@@ -36,7 +36,7 @@
     
 <div class="sourceButtonDivCEO">
     
-	<form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+	<form name="planSources" action="sources.php" method="post">
 	
 		<input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
 		<input type="submit" name="sources" value="Peers" class="sourceButtons">
@@ -51,7 +51,7 @@
 
 <div class="sourceButtonDiv">
     
-	<form name="planSources" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+	<form name="planSources" action="sources.php" method="post">
 	
 		<input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
 		<input type="submit" name="sources" value="Peers" class="sourceButtons">
@@ -71,19 +71,23 @@
 
 <div class="textArea">
     
-	<textarea name="planSource" rows='30' cols='75' readonly></textarea>
+	<textarea name="planSource" rows='30' cols='75' readonly><?php 
+	
+	if(isset($_SESSION['drPlan'])) {
+	    echo $_SESSION['drPlan'];
+	}
+	    
+	    
+	    
+	?>  
+	</textarea>
 
 </div>
 
 <h3 id="textArea2H3">Create Your Plan:</h3>
 
 <form method="post" class="textArea" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-	<!-- <select name='year' > 
-		<option value =''> Select </option>
-		<option value='2014'> 2014 </option>
-		<option value='2015'> 2015 </option>
-		<option value='2016'> 2016 </option>
-	</select></br> -->
+	
     <textarea name="createPlan" rows = '30' cols = '75' placeholder="Enter new plan here"></textarea><br>
     <input name="submit" type="submit" value="Submit Plan" />
 </form>

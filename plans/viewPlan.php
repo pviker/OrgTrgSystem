@@ -68,9 +68,9 @@
     <p>
     <?php
     
-    if(isset($drPlan)) {
+    if(isset($drPlanView)) {
                
-           echo $drPlan;
+           echo $drPlanView;
     }
     
     ?>

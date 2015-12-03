@@ -15,7 +15,8 @@ if($_SESSION['role'] == "Team Lead") {
        
        $drResult = mysqli_query($connection, $drQuery);
        
-       $drPlan = "";
+       $drPlanView = "";
+       $drPlanCreate = "";
        
        while($drRow = mysqli_fetch_assoc($drResult)) {
                    
@@ -26,7 +27,9 @@ if($_SESSION['role'] == "Team Lead") {
              
              $drPlanRow = mysqli_fetch_assoc($drPlanResult);
              
-             $drPlan .= $drPlanRow['plan'] . "<br>";
+             $drPlanView .= $drPlanRow['plan'] . "<br>";
+             
+             $drPlanCreate .= $drPlanRow['plan'] . "\n\n";
            
        }
        
