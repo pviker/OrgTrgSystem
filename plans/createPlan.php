@@ -5,6 +5,9 @@
 	require("../controllers/db2.php");
     require("../includes/header.php");
     require("../includes/topmenu.php");
+    foreach (glob("../includes/viewPlans/*.php") as $filename){
+        require $filename;
+    }
 		
 	if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -100,7 +103,15 @@
 
 <form method="post" class="textArea" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 	
-    <textarea name="createPlan" rows = '30' cols = '75' placeholder="Enter new plan here"></textarea><br>
+    <textarea name="createPlan" rows = '30' cols = '75' placeholder="Enter new plan here"><?php
+    
+     if(isset($selfPlan)) {
+         echo $selfPlan;
+     }   
+     
+        
+     ?>   
+    </textarea><br>
     <input name="submit" type="submit" value="Submit Plan" class="formButton" />
 </form>
 <br />
