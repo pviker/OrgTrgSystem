@@ -1,8 +1,6 @@
 <?php
 // header for all pages
-	
-	if (!isset($_SESSION)) session_start();
-
+if (!isset($_SESSION)) session_start();
 ?>
 
 <!DOCTYPE html>

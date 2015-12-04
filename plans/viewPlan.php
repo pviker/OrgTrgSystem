@@ -7,6 +7,7 @@
 	    require $filename;
 	}
     
+    $_SESSION['currentPlan'] = $selfPlan;
 	 // formatted session var dump script
 //	include("../misc_files/seshVarDumpFn.php");
 ?>

@@ -16,6 +16,8 @@
 	if (!isset($_SESSION['uname'])){
 		header ('Location:../index.php'); 
     }
+    
+      
 	
 ?>
 
@@ -28,7 +30,9 @@
 ?>
 
 <div class="sourceButtonDivEmployee">
+
 	<!-- <h3 id="textArea1H3">Plan Resources:</h3> -->
+
     
 	<form name="planSources" action="sources.php" method="post">
 								
@@ -44,12 +48,13 @@
 <?php } else if($_SESSION['role'] == "CEO") { ?>
     
 <div class="sourceButtonDivCEO">
+
 	<!-- <h3 id="textArea1H3">Plan Resources:</h3> -->
+
     
 	<form name="planSources" action="sources.php" method="post">
 	
 		<input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
-		<input type="submit" name="sources" value="Peers" class="sourceButtons">
 		<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
 		<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
 		
@@ -58,7 +63,9 @@
 </div>
 
 <?php } else { ?>
+
 <!-- <h3 class="center">Plan Resources:</h3> -->
+
 <div class="sourceButtonDiv">
 	
     
@@ -86,9 +93,11 @@
 	
 	if(isset($_SESSION['drPlan'])) {
 	    echo $_SESSION['drPlan'];
+	    unset($_SESSION['drPlan']);
         
-	} else if(isset($_SESSION['pyPlan'])) {
+	} if(isset($_SESSION['pyPlan'])) {
 	    echo($_SESSION['pyPlan']);
+	    unset($_SESSION['pyPlan']);
         
 	}
 	    
@@ -105,8 +114,8 @@
 	
     <textarea name="createPlan" rows = '30' cols = '75' placeholder="Enter new plan here"><?php
     
-     if(isset($selfPlan)) {
-         echo $selfPlan;
+     if(isset($_SESSION['currentPlan'])) {
+         echo $_SESSION['currentPlan'];
      }   
      
         
