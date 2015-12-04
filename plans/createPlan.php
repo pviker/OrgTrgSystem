@@ -14,12 +14,18 @@
 		header ('Location:../index.php'); 
     }
 	
+?>
+
+
+
+<?php	
 
     if($_SESSION['role'] == "Employee") {
     
 ?>
 
 <div class="sourceButtonDivEmployee">
+	<h3 id="textArea1H3">Plan Resources:</h3>
     
 	<form name="planSources" action="sources.php" method="post">
 								
@@ -35,6 +41,7 @@
 <?php } else if($_SESSION['role'] == "CEO") { ?>
     
 <div class="sourceButtonDivCEO">
+	<h3 id="textArea1H3">Plan Resources:</h3>
     
 	<form name="planSources" action="sources.php" method="post">
 	
@@ -48,8 +55,9 @@
 </div>
 
 <?php } else { ?>
-
+<h3 class="center">Plan Resources:</h3>
 <div class="sourceButtonDiv">
+	
     
 	<form name="planSources" action="sources.php" method="post">
 	
