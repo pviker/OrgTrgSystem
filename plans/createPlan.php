@@ -49,7 +49,6 @@
 	<form name="planSources" action="sources.php" method="post">
 	
 		<input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
-		<input type="submit" name="sources" value="Peers" class="sourceButtons">
 		<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
 		<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
 		
