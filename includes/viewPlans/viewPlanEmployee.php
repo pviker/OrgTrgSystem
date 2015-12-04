@@ -9,9 +9,9 @@ if($_SESSION['role'] == "Employee") {
     
        $planRow = mysqli_fetch_assoc($planResult);
     
-       $plan = $planRow['plan'];
+       $selfPlan = $planRow['plan'];
     
-       if(strtoupper($plan) == "NULL") {
+       if(strtoupper($selfPlan) == "NULL") {
         
         header("Location: createPlan.php");
         exit;

@@ -75,6 +75,10 @@
 	
 	if(isset($_SESSION['drPlan'])) {
 	    echo $_SESSION['drPlan'];
+        
+	} else if(isset($_SESSION['pyPlan'])) {
+	    echo($_SESSION['pyPlan']);
+        
 	}
 	    
 	    

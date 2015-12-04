@@ -37,12 +37,7 @@
   <div>
     <p>
     <?php
-    
-    if(isset($plan)) {
                
-           echo $plan;
-    }  
-           
     if(isset($selfPlan)) {
                
            echo $selfPlan;
@@ -58,12 +53,7 @@
   <h3>My Plan</h3>
   <div>
     <p>
-    <?php
-    
-    if(isset($plan)) {
-               
-           echo $plan;
-    }  
+    <?php 
            
     if(isset($selfPlan)) {
                
