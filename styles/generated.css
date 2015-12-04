@@ -1,23 +1,4 @@
-body {
-	
-	height: 100%;
-    margin: 0;
-    /*background-repeat: no-repeat;*/
 
-	background-image: -webkit-gradient(
-		linear,
-		right top,
-		left top,
-		color-stop(0, #6E6E6E),
-		color-stop(1, #FFFFFF),
-		color-stop(1, #1B1B1B)
-	);
-	background-image: -o-linear-gradient(left, #6E6E6E 0%, #FFFFFF 100%, #1B1B1B 100%);
-	background-image: -moz-linear-gradient(left, #6E6E6E 0%, #FFFFFF 100%, #1B1B1B 100%);
-	background-image: -webkit-linear-gradient(left, #6E6E6E 0%, #FFFFFF 100%, #1B1B1B 100%);
-	background-image: -ms-linear-gradient(left, #6E6E6E 0%, #FFFFFF 100%, #1B1B1B 100%);
-	background-image: linear-gradient(to left, #6E6E6E 0%, #FFFFFF 100%, #1B1B1B 100%);
-}
 
 
 /* BUTTON STYLE */

@@ -24,8 +24,8 @@
             
             <fieldset class="fieldset">
             	               
-               <label>Username:</label>
-                   <input type="text" name="username" class="fields" value="" size="25"><br>
+               <label>Email:</label>
+                   <input type="text" name="username" placeholder="Will be used as username" class="fields" value="" size="25"><br>
                    
                <label>Password:</label>
                	   <input type="password" name="password" class="fields" id="password" value="" size="25"><br />
@@ -46,10 +46,7 @@
             
                <label>Name:</label>
                    <input type="text" name="name" class="fields" value="" size="25"><br>
-                
-               <label>E-mail:</label>
-                   <input type="text" name="email" class="fields" value="" size="25"><br>
-                   
+                 
                <label>Organization:</label>
                    <!-- <input type="text" name="orgName" class="fields" value="<?php echo $orgName ?>" size="25"><br> -->
                     <select name="orgName">      

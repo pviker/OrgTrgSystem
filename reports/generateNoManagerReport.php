@@ -47,14 +47,15 @@
 	
     //Query for user info
     $userInfoQuery = "select credentials.id, username, admin, name, email, organization_name, role, manager_email
-    					 from credentials, employees where credentials.id = employees.id order by role";
+    					 from credentials, employees where credentials.id = employees.id and manager_email='' order by role";
      
     $results = mysqli_query($connection, $userInfoQuery);
+    
+	//var_dump($results);
      
 ?>
-
-	<h1 class="center">Automatically Generated Report</h1>
-	<h3 class="center">*All Current Employees</h3>
+		<h1 class="center">Automatically Generated Report</h1>
+		<h3 class="center">*All Current Employees Without Assigned Manager</h3>
 		<div class="left-align">
     	Created on: 
     	<?php 
@@ -110,7 +111,7 @@
 		<?php     
 		  
 		    //Free results from memory
-		    mysqli_free_result($results);
+		  //  mysqli_free_result($results);
 		    //Close database connection
 		    mysqli_close($connection);
 		 

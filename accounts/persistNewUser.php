@@ -14,7 +14,7 @@
 		
 		/// employees table
 		$name = $_POST['name'];
-		$email = $_POST['email'];
+		$email = $_POST['username'];;
 		$orgName = $_POST['orgName'];
 		$role = $_POST['role'];
 		$mgrEmail = $_POST['mgrEmail'];
