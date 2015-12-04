@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
     }
 
 if($_POST['sources'] == "Previous Years") {
-        header("Location: changeYear.php");     
+        header("Location: changeYear.php");  
 }
     
 ?>

@@ -33,7 +33,7 @@
 			<h3 id="">Create your organization template:</h3>
 			<form method="post" class="orgTempTxtArea" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 			    <textarea name="createPlan" rows = '30' cols = '75' placeholder="Enter new plan here"></textarea><br>
-			    <input name="submit" type="submit" value="Submit Plan" />
+			    <input name="submit" type="submit" value="Submit Plan" class="formButton"/>
 			</form>
 		</div>
 		

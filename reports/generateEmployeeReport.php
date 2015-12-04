@@ -15,6 +15,7 @@
 	<link href="/ics325/OrgTrgSystem/styles/main.css" rel="stylesheet">
 	
 	<script type="text/javascript" src="../js/confirmDelete.js"> </script>
+	<link href="/ics325/OrgTrgSystem/styles/generated.css" rel="stylesheet">
 	
 	<script src="/ics325/OrgTrgSystem/js/sweetalert-master/dist/sweetalert.min.js"></script> 
 	<link rel="stylesheet" type="text/css" href="/ics325/OrgTrgSystem/js/sweetalert-master/dist/sweetalert.css">

@@ -27,7 +27,7 @@ if($_SESSION['role'] == "Manager") {
              
              $drPlanRow = mysqli_fetch_assoc($drPlanResult);
              
-             $drPlanView .= $drPlanRow['plan'] . "<br>";
+             $drPlanView .= $drPlanRow['plan'] . "<br><div class='line-separator'></div><br />";
              
              $drPlanCreate .= $drPlanRow['plan'] . "\n\n";
            
