@@ -83,8 +83,10 @@
                		<input type="hidden" name="employeeID" value="<?php echo $employeeID; ?>">
                 <?php } ?>
 
+				<?php if (strpos($_SERVER['HTTP_REFERER'],'updateUser.php') == false) { ?>
                 <label>Old Password:</label>
                 	<input type="password" name="oldPassword" placeholder="Enter old password" size="25" class="fields" id="oldPass" /><br />
+                <?php } ?>
                 <label>New Password:</label>
                 	<input type="password" name="newPassword" placeholder="Enter new password" size="25" class="fields" id="newPass" /><br />
                 <label>Confirm New Password:</label>

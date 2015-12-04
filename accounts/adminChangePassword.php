@@ -32,7 +32,7 @@
 	}
 	 
 	if(isset($_POST['Send'])) {       
-		$oldPassword = $_POST['oldPassword'];
+		//$oldPassword = $_POST['oldPassword'];
 		$newPassword = $_POST['newPassword'];
 		$confirmPassword = $_POST['confirmPassword'];    
 	}
@@ -45,7 +45,7 @@
      
     $dbPassword = $passRow['password'];
      
-    if($dbPassword === sha1($oldPassword)) {
+   // if($dbPassword === sha1($oldPassword)) {
     	if($newPassword === $confirmPassword) {
         	$passUpdate = "update credentials set password = sha1('" . $newPassword . "')
            						where id = '" . $id . "'";
@@ -60,8 +60,9 @@
 		    $_SESSION['passNotMatch'] = "Passwords do not match. Please try again.<br>";
 		    header("Location: changePasswordForm.php");
 		  }
-      } else {
-    		$_SESSION['passNotMatch'] = "Original password not correct. Please try again.<br>";
-     		header("Location: changePasswordForm.php");
-        }
+     // }
+ // else {
+    		// $_SESSION['passNotMatch'] = "Original password not correct. Please try again.<br>";
+     		// header("Location: changePasswordForm.php");
+        // }
 ?>
