@@ -29,6 +29,11 @@
 			<span><a href="../reports/generateNoManagerReport.php" target="_blank" class="formButton">Employees without a manager</a></span><br /><br />
 			<span><a href="../reports/generateManagerNoTrgReport.php" target="_blank" class="formButton">Managers without training plans for selected year</a></span>
 			<span><a href="#" target="_blank" class="formButton">All employees without training plans for selected year</a></span>
+		</div><br />
+		
+		<div>
+			Current selected year: <strong><?php echo $_SESSION['currentYear'] ?></strong> 
+			<span class="small-link">(<a href="../plans/changeYear.php?ref=reports">change</a>)</span>
 		</div>
 		
 	</div> <!-- /container -->

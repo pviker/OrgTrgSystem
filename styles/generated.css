@@ -1,4 +1,17 @@
+.styled-select select {
 
+   background: white;
+   background: url(http://bavotasan.com/wp-content/uploads/2011/05/down_arrow_select.jpg) no-repeat right white;
+   width: 15.4em;
+   padding: 5px;
+   /*font-size: 16px;*/
+   line-height: 1;
+   border: 0px solid black;
+   border-radius: 0;
+   height: 30px;
+   -webkit-appearance: none;
+   margin: 4px;
+   }
 
 
 /* BUTTON STYLE */

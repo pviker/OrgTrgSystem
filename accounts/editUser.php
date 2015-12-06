@@ -56,18 +56,18 @@
                <label>Username:</label>
                    <input type="text" name="username" readonly="true" class="fields" value="<?php echo $username ?>" size="25"><br>
                   
-               <label>Admin:</label>
+              <div class="styled-select"> <label>Admin:</label>
                   <select name="admin">      
                     <option value="1" <?php if($admin == 1) {echo "selected";} ?> >Yes</option>
 					<option value="0" <?php if($admin == 0) {echo "selected";} ?> >No</option>
-               	  </select><br />
+               	  </select></div>
             
                <label>Name:</label>
                    <input type="text" name="name" class="fields" value="<?php echo $name ?>" size="25"><br>
                 
                <label>E-mail:</label>
                    <input type="text" name="email" class="fields" value="<?php echo $email ?>" size="25"><br>
-                   
+               <div class="styled-select">   
                <label>Organization:</label>
                    <!-- <input type="text" name="orgName" class="fields" value="<?php echo $orgName ?>" size="25"><br> -->
                     <select name="orgName">      
@@ -77,8 +77,8 @@
                     <option value="Software" <?php if($orgName == "Software") {echo "selected";} ?> >Software</option>
                     <option value="Admin" <?php if($orgName == "Admin") {echo "selected";} ?> >Admin</option>
                    
-                  </select><br />
-                   
+                  </select></div>
+               <div class="styled-select">   
                <label>Role:</label>
                   <select name="role">      
                     <option value="CEO" <?php if($role == "CEO") {echo "selected";} ?> >CEO</option>
@@ -86,7 +86,7 @@
 					<option value="Team Lead" <?php if($role == "Team Lead") {echo "selected";} ?> >Team Lead</option>
 					<option value="Employee" <?php if($role == "Employee") {echo "selected";} ?> >Employee</option>
 					<option value="Admin" <?php if($role == "Admin") {echo "selected";} ?> >Admin</option>
-               	  </select><br /> 
+               	  </select></div>
                    
                <label>Mgr Email:</label>
                    <input type="text" name="mgrEmail" class="fields" value="<?php echo $mgrEmail ?>" size="25"><br>

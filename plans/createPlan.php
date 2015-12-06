@@ -42,8 +42,13 @@
 		<input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
 					
 	</form>
-
+<br />
+<div>
+	Current selected year: <strong><?php echo $_SESSION['currentYear'] ?></strong> 
+	<!-- <span class="small-link">(<a href="../plans/changeYear.php">change</a>)</span> -->
 </div>
+</div>
+
 
 <?php } else if($_SESSION['role'] == "CEO") { ?>
     
@@ -59,8 +64,13 @@
 		<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
 		
 	</form>
-
+<br />
+<div>
+	Current selected year: <strong><?php echo $_SESSION['currentYear'] ?></strong> 
+	<!-- <span class="small-link">(<a href="../plans/changeYear.php">change</a>)</span> -->
 </div>
+</div>
+
 
 <?php } else { ?>
 
@@ -78,8 +88,14 @@
 		<input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
 		
 	</form>
-
+<br />
+<div>
+	Current selected year: <strong><?php echo $_SESSION['currentYear'] ?></strong> 
+	<!-- <span class="small-link">(<a href="../plans/changeYear.php">change</a>)</span> -->
 </div>
+</div>
+
+
 
 <?php } ?>
 
@@ -89,21 +105,20 @@
 
 <div class="textArea">
     
-	<textarea name="planSource" rows='30' cols='75' readonly><?php 
-	
-	if(isset($_SESSION['drPlan'])) {
-	    echo $_SESSION['drPlan'];
-	    unset($_SESSION['drPlan']);
-        
-	} if(isset($_SESSION['pyPlan'])) {
-	    echo($_SESSION['pyPlan']);
-	    unset($_SESSION['pyPlan']);
-        
-	}
-	    
-	    
-	    
-	?>  
+	<textarea name="planSource" rows='30' cols='75' readonly>
+		<?php 
+		
+		if(isset($_SESSION['drPlan'])) {
+		    echo $_SESSION['drPlan'];
+		    unset($_SESSION['drPlan']);
+	        
+		} if(isset($_SESSION['pyPlan'])) {
+		    echo($_SESSION['pyPlan']);
+		    unset($_SESSION['pyPlan']);
+	        
+		}    
+		    
+		?>  
 	</textarea>
 
 </div>

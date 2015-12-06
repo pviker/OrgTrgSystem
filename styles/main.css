@@ -112,7 +112,7 @@ form.edit-user-form label {
 	text-align: right;
 }
 
-form.edit-user-form select {
+/*form.edit-user-form select {
 	margin-right: .5em;
 	display: inline-block;
 	width: 15.5em;
@@ -121,7 +121,7 @@ form.edit-user-form select {
 	margin: .3em;
 	padding: .5em;
 	line-height: 5;
-}
+}*/
 
 .fieldset {
 	margin-left: 2em;	
