@@ -2,6 +2,12 @@
 // header for all pages
 	
 	if (!isset($_SESSION)) session_start();
+	
+	// checks if file system is on server and corrects root directory for absolute URL paths
+	$server = $_SERVER['SERVER_NAME'];
+	if (strpos($server,'metrostate.edu') == true) {
+		$server = "/~ics325fa1528";
+	} else $server = "";
 
 ?>
 
@@ -12,13 +18,13 @@
 <head>
 	
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-	<link href="/ics325/OrgTrgSystem/styles/main.css" rel="stylesheet">
+	<link href="<?php echo $server ?>/ics325/OrgTrgSystem/styles/main.css" rel="stylesheet">
 	
 	<script type="text/javascript" src="../js/confirmDelete.js"> </script>
-	<link href="/ics325/OrgTrgSystem/styles/generated.css" rel="stylesheet">
+	<link href="<?php echo $server ?>/ics325/OrgTrgSystem/styles/generated.css" rel="stylesheet">
 	
-	<script src="/ics325/OrgTrgSystem/js/sweetalert-master/dist/sweetalert.min.js"></script> 
-	<link rel="stylesheet" type="text/css" href="/ics325/OrgTrgSystem/js/sweetalert-master/dist/sweetalert.css">
+	<script src="<?php echo $server ?>/ics325/OrgTrgSystem/js/sweetalert-master/dist/sweetalert.min.js"></script> 
+	<link rel="stylesheet" type="text/css" href="<?php echo $server ?>/ics325/OrgTrgSystem/js/sweetalert-master/dist/sweetalert.css">
 	
 </head>
 
