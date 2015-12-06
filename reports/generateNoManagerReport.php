@@ -46,8 +46,8 @@
 	require("../controllers/db2.php");
 	
     //Query for user info
-    $userInfoQuery = "select credentials.id, username, name, email, organization_name, role, manager_email
-    					 from credentials, employees where credentials.id = employees.id and manager_email='' 
+    $userInfoQuery = "select credentials2.id, username, name, email, organization_name, role, manager_email
+    					 from credentials2, employees where credentials2.id = employees.id and manager_email='' 
     					 order by organization_name, role";
      
     $results = mysqli_query($connection, $userInfoQuery);

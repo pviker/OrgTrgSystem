@@ -46,14 +46,14 @@
 	require("../controllers/db2.php");
 	
     //Query for user info
-    // $userInfoQuery = "select credentials.id, username, admin, name, email, organization_name, role, manager_email
-    					 // from credentials, employees, plans where credentials.id = employees.id and role='manager' order by role";
+    // $userInfoQuery = "select credentials2.id, username, admin, name, email, organization_name, role, manager_email
+    					 // from credentials2, employees, plans where credentials2.id = employees.id and role='manager' order by role";
      
-    $userInfoQuery = "select credentials.id, plan, username, admin, name, email, organization_name, role, manager_email
-						from credentials, employees, plans
-    					where credentials.id IN (select plans.id from plans where plan IS NULL or plan = '')
-    					and credentials.id = employees.id
-    					and credentials.id = plans.id
+    $userInfoQuery = "select credentials2.id, plan, username, admin, name, email, organization_name, role, manager_email
+						from credentials2, employees, plans
+    					where credentials2.id IN (select plans.id from plans where plan IS NULL or plan = '')
+    					and credentials2.id = employees.id
+    					and credentials2.id = plans.id
     					and pYear = " . $_SESSION['currentYear'] . "
 						order by organization_name, role";
 						 

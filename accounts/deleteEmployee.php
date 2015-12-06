@@ -29,7 +29,7 @@
 	require("../includes/topmenu.php");
 	require("../controllers/db2.php");
 	   
-    $query1 = "delete from credentials where id = " . $employeeID;
+    $query1 = "delete from credentials2 where id = " . $employeeID;
 	$query2 = "delete from employees where id = " . $employeeID;
     
     if(mysqli_query($connection, $query1)){

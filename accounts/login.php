@@ -30,13 +30,13 @@
 	// if admin
 	else {
     
-	    $adminQuery = "select count(*) from credentials where username = '" . $username . "' and 
+	    $adminQuery = "select count(*) from credentials2 where username = '" . $username . "' and 
 	    password = sha1('" . $password . "') and admin = '1'";
 	    
 	    $result = mysqli_query($connection, $adminQuery);
         
-        $userInfoQuery = "select organization_name, role from employees, credentials where employees.id=credentials.id 
-        and credentials.username='" . $username . "'";
+        $userInfoQuery = "select organization_name, role from employees, credentials2 where employees.id=credentials2.id 
+        and credentials2.username='" . $username . "'";
         
         $userInfoResult = mysqli_query($connection, $userInfoQuery);
           
@@ -57,7 +57,7 @@
 	    
 	    if($count > 0) {
 	    	
-		    $idQuery = "select id from credentials where username = '".$username."'" ; 
+		    $idQuery = "select id from credentials2 where username = '".$username."'" ; 
 		    $result = mysqli_query($connection, $idQuery);
 		    $row = mysqli_fetch_assoc($result);
 		    
@@ -74,13 +74,13 @@
 	    // not an admin
 	    else {
 	    
-		    $query = "select count(*) from credentials where username = '" . $username . "' and 
+		    $query = "select count(*) from credentials2 where username = '" . $username . "' and 
 		    password = sha1('" . $password . "')";
 		    
 		    $result = mysqli_query($connection, $query);
 	        
-	        $userInfoQuery = "select organization_name, role from employees, credentials where employees.id=credentials.id 
-	        and credentials.username='" . $username . "'";
+	        $userInfoQuery = "select organization_name, role from employees, credentials2 where employees.id=credentials2.id 
+	        and credentials2.username='" . $username . "'";
 	        
 	        $userInfoResult = mysqli_query($connection, $userInfoQuery);
 	    
@@ -101,7 +101,7 @@
 		    
 		    if($count > 0) {
 		  
-			    $idQuery = "select id from credentials where username = '".$username."'" ; 
+			    $idQuery = "select id from credentials2 where username = '".$username."'" ; 
 			    $result = mysqli_query($connection, $idQuery);
 			    $row = mysqli_fetch_assoc($result);
 				

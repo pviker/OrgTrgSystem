@@ -30,7 +30,7 @@
 		    $employeeID = $_GET['id'];
 		    
 		    $userQuery = "select username, admin, name, email, organization_name, role, manager_email
-							 from credentials, employees where credentials.id = " . $employeeID . " and employees.id = " . $employeeID;
+							 from credentials2, employees where credentials2.id = " . $employeeID . " and employees.id = " . $employeeID;
 		    
 		    $result = mysqli_query($connection, $userQuery); 
 		    $row = mysqli_fetch_assoc($result);

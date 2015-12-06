@@ -7,7 +7,7 @@
 	if(isset($_POST['adduser'])) {
 	   
 //	    $employeeID = $_POST['employeeID'];
-		/// credentials table
+		/// credentials2 table
 		$username = $_POST['username'];
 		$password = sha1($_POST['password']);
 		$admin = $_POST['admin'];
@@ -28,7 +28,7 @@
 		if(mysqli_query($connection, $insert)){
 			
 			$last_id = mysqli_insert_id($connection);
-			$insert = "INSERT INTO credentials (id, username, password, admin)
+			$insert = "INSERT INTO credentials2 (id, username, password, admin)
 							VALUES ('$last_id', '$username', '$password', '$admin')";
 							
 			echo $insert;

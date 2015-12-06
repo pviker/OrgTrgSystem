@@ -15,9 +15,9 @@
 		$role = $_POST['role'];
 		$mgrEmail = $_POST['mgrEmail'];
 		   
-		$updateQuery = "update credentials, employees set admin='" . $admin . "', name='" . $name . 
+		$updateQuery = "update credentials2, employees set admin='" . $admin . "', name='" . $name . 
 						"', email='" . $email . "', organization_name='" . $orgName . "', role='" . $role . "', manager_email='" . 
-						$mgrEmail . "' where credentials.id='" . $employeeID . "' and employees.id='" . $employeeID . "'";
+						$mgrEmail . "' where credentials2.id='" . $employeeID . "' and employees.id='" . $employeeID . "'";
 	   	   
 	   	
 		if(mysqli_query($connection, $updateQuery)){

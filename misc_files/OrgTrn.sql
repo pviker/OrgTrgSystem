@@ -13,7 +13,7 @@ CREATE TABLE `employees` (
 	`manager_email` VARCHAR (45) NULL, 
 	PRIMARY KEY (`id`)); 
 
-CREATE TABLE `credentials` (
+CREATE TABLE `credentials2` (
 	`id` INT NULL,
 	`username` VARCHAR(45) NULL,
 	`password` VARCHAR(45) NULL,
@@ -46,7 +46,7 @@ INSERT INTO employees VALUES
 	('', 'Kevin Johnson', 'kj@aol.com', 'Software Team', 'Employee', 'jp@aol.com'),
 	('', 'Scott Dedon', 'sd@aol.com', 'Software Team', 'Employee', 'jp@aol.com');
 	
-INSERT INTO credentials values 
+INSERT INTO credentials2 values 
 	('1', 'jw@aol.com', sha1('password' ), '1' ), 
 	('2', 'pw@aol.com', sha1('password' ) , '0' ), 
 	('3', 'gp@aol.com', sha1('password' ) , '0' ), 

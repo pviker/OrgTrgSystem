@@ -26,7 +26,7 @@
 	$curYear = date("Y");  
 	$username= $_SESSION['uname']; 
 	
-	$idQuery = "SELECT id FROM credentials WHERE username = '".$username."'" ; 
+	$idQuery = "SELECT id FROM credentials2 WHERE username = '".$username."'" ; 
 	$result = mysqli_query($dbc, $idQuery);
 	$row = mysqli_fetch_row($result);
    	$userid = $row[0];

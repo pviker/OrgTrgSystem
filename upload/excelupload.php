@@ -65,7 +65,7 @@ for($i=0;$i<count($data->sheets);$i++) // Loop to get all sheets in a file.
             
             fwrite($file, $defaultPswd . "\n");
             
-            $credInsertQuery = "insert into credentials (id, username, password, admin)
+            $credInsertQuery = "insert into credentials2 (id, username, password, admin)
             values ('" . $last_id . "', '" . $email . "', sha1('" . $defaultPswd . "'), '0')";
             
             mysqli_query($connection, $credInsertQuery);

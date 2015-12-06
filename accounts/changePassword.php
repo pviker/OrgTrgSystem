@@ -38,7 +38,7 @@
  
      passwordValidate($newPassword);
      
-     $passQuery = "select password from credentials where username='" . $_SESSION['uname'] . "'";
+     $passQuery = "select password from credentials2 where username='" . $_SESSION['uname'] . "'";
      
      $passResult = mysqli_query($connection, $passQuery);
      
@@ -50,7 +50,7 @@
  
         if($newPassword === $confirmPassword) {
      
-           $passUpdate = "update credentials set password = sha1('" . $newPassword . "')
+           $passUpdate = "update credentials2 set password = sha1('" . $newPassword . "')
            where username = '" . $_SESSION['uname'] . "'";
            
            mysqli_query($connection, $passUpdate);

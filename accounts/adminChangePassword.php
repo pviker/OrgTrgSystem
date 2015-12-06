@@ -39,7 +39,7 @@
 
     passwordValidate($newPassword);
      
-    $passQuery = "select password from credentials where id='" . $id . "'";
+    $passQuery = "select password from credentials2 where id='" . $id . "'";
     $passResult = mysqli_query($connection, $passQuery);
     $passRow = mysqli_fetch_assoc($passResult);
      
@@ -47,7 +47,7 @@
      
    // if($dbPassword === sha1($oldPassword)) {
     	if($newPassword === $confirmPassword) {
-        	$passUpdate = "update credentials set password = sha1('" . $newPassword . "')
+        	$passUpdate = "update credentials2 set password = sha1('" . $newPassword . "')
            						where id = '" . $id . "'";
            
             mysqli_query($connection, $passUpdate);
