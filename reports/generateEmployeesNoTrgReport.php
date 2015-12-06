@@ -54,9 +54,9 @@
     					where credentials.id IN (select plans.id from plans where plan IS NULL or plan = '')
     					and credentials.id = employees.id
     					and credentials.id = plans.id
-    					and role = 'manager'
     					and pYear = " . $_SESSION['currentYear'] . "
-						order by organization_name";
+						order by organization_name, role";
+						 
      
     $results = mysqli_query($connection, $userInfoQuery);
     
@@ -64,7 +64,7 @@
      
 ?>
 	<h1 class="center">Automatically Generated Report</h1>
-	<h3 class="center">*Managers who do not have a training plan for the year <?php echo $_SESSION['currentYear'] ?></h3>
+	<h3 class="center">*All employees who do not have a training plan for the year <?php echo $_SESSION['currentYear'] ?></h3>
 	
 		<div class="left-align">
     	Created on: 
