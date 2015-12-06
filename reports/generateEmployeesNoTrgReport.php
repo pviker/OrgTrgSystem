@@ -55,13 +55,22 @@
     // $userInfoQuery = "select credentials2.id, username, admin, name, email, organization_name, role, manager_email
     					 // from credentials2, employees, plans where credentials2.id = employees.id and role='manager' order by role";
      
-    $userInfoQuery = "select credentials2.id, plan, username, admin, name, email, organization_name, role, manager_email
-						from credentials2, employees, plans
-    					where credentials2.id IN (select plans.id from plans where plan IS NULL or plan = '')
-    					and credentials2.id = employees.id
-    					and credentials2.id = plans.id
-    					and pYear = " . $_SESSION['currentYear'] . "
-						order by organization_name, role";
+//     $userInfoQuery = "select credentials2.id, plan, username, admin, name, email, organization_name, role, manager_email
+// 						from credentials2, employees, plans
+//     					where credentials2.id IN (select plans.id from plans where plan IS NULL or plan = '')
+//     					and credentials2.id = employees.id
+//     					and credentials2.id = plans.id
+//     					and pYear = " . $_SESSION['currentYear'] . "
+// 						order by organization_name, role";
+
+	  $userInfoQuery = "SELECT * FROM employees, plans
+					    WHERE employees.id = plans.id
+						and pYear = " . $_SESSION['currentYear'] . "
+					    and plan IS NULL
+					    or
+					    employees.id = plans.id
+						and pYear = " . $_SESSION['currentYear'] . "
+					    and plan = ''";
 						 
      
     $results = mysqli_query($connection, $userInfoQuery);
@@ -107,9 +116,7 @@
 					   
 	                 echo "<tr>
 	                 		
-	                 		<td>" . $row["username"] . "</td>
-	
-	                 		
+	                 		<td>" . $row["email"] . "</td>                		
 	                 		<td>" . $row["name"] . "</td>
 	                 		<td>" . $row["email"] . "</td>
 	                 		<td>" . $row["organization_name"] . "</td>

@@ -53,14 +53,16 @@
             	
             	<input type="hidden" name="employeeID" value="<?php echo $employeeID ?>" />
                 
-               <label>Username:</label>
+               	<label>Username:</label>
                    <input type="text" name="username" readonly="true" class="fields" value="<?php echo $username ?>" size="25"><br>
                   
-              <div class="styled-select"> <label>Admin:</label>
+              	<div class="styled-select"> 
+              	<label>Admin:</label>
                   <select name="admin">      
                     <option value="1" <?php if($admin == 1) {echo "selected";} ?> >Yes</option>
 					<option value="0" <?php if($admin == 0) {echo "selected";} ?> >No</option>
-               	  </select></div>
+               	  </select>
+               	</div>
             
                <label>Name:</label>
                    <input type="text" name="name" class="fields" value="<?php echo $name ?>" size="25"><br>

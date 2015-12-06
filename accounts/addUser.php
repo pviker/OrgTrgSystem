@@ -37,16 +37,19 @@
             
             </fieldset>   
             
-            <fieldset class="fieldset">   
+            <fieldset class="fieldset">
+               <div class="styled-select"> 
                <label>Admin:</label>
                   <select name="admin">      
                     <option value="1">Yes</option>
 					<option value="0" selected>No</option>
-               	  </select><br />
+               	  </select>
+               </div>
             
                <label>Name:</label>
                    <input type="text" name="name" class="fields" value="" size="25"><br>
-                 
+                
+               <div class="styled-select"> 
                <label>Organization:</label>
                    <!-- <input type="text" name="orgName" class="fields" value="<?php echo $orgName ?>" size="25"><br> -->
                     <select name="orgName">      
@@ -55,9 +58,10 @@
                     <option value="HR">HR</option>
                     <option value="Software">Software</option>
                     <option value="Admin">Admin</option>
-                   
-                  </select><br />
-                   
+                  </select>
+               </div>
+                
+               <div class="styled-select">   
                <label>Role:</label>
                   <select name="role">      
                     <option value="CEO">CEO</option>
@@ -65,8 +69,8 @@
 					<option value="Team Lead">Team Lead</option>
 					<option value="Employee">Employee</option>
 					<option value="Admin">Admin</option>
-               	  </select><br /> 
-                   
+               	  </select>
+               </div>    
                <label>Mgr Email:</label>
                    <input type="text" name="mgrEmail" class="fields" value="" size="25"><br>
 	             <br />
