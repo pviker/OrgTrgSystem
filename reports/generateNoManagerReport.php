@@ -46,8 +46,9 @@
 	require("../controllers/db2.php");
 	
     //Query for user info
-    $userInfoQuery = "select credentials.id, username, admin, name, email, organization_name, role, manager_email
-    					 from credentials, employees where credentials.id = employees.id and manager_email='' order by role";
+    $userInfoQuery = "select credentials.id, username, name, email, organization_name, role, manager_email
+    					 from credentials, employees where credentials.id = employees.id and manager_email='' 
+    					 order by organization_name, role";
      
     $results = mysqli_query($connection, $userInfoQuery);
     
@@ -68,7 +69,7 @@
     	<table>
         	<tr>
                  <td>User name</td>
-                 <td>Admin</td>
+                 <!-- <td>Admin</td> -->
                  <td>Name</td>
                  <td>Email</td>
                  <td>Team</td>
@@ -81,19 +82,19 @@
 	             //Print rows from database records into table
 	             while($row = mysqli_fetch_assoc($results)) {
 	                 
-					 $admin = "";
-					 if($row["admin"] == 1){
-					 	$admin = "Yes";
-					 	$delete = "";
-					 } else if($row["admin"] == 0){
-					 	$admin = "No";
-					 }
+					 // $admin = "";
+					 // if($row["admin"] == 1){
+					 	// $admin = "Yes";
+					 	// $delete = "";
+					 // } else if($row["admin"] == 0){
+					 	// $admin = "No";
+					 // }
 					   
 	                 echo "<tr>
 	                 		
 	                 		<td>" . $row["username"] . "</td>
 	
-	                 		<td>" . $admin . "</td>
+	                 		
 	                 		<td>" . $row["name"] . "</td>
 	                 		<td>" . $row["email"] . "</td>
 	                 		<td>" . $row["organization_name"] . "</td>
