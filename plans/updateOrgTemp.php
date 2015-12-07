@@ -13,6 +13,14 @@
 	}
 	
 	require("../includes/topmenu.php");
+	require("../controllers/db2.php");
+	
+	$query = "select plan from plans where id=" . $_SESSION['userID'] . "
+				and pYear=2015";
+			
+	$planResult = mysqli_query($connection, $query);
+    $planRow = mysqli_fetch_assoc($planResult);
+    $plan = $planRow['plan'];
 	
 ?>
 
@@ -36,10 +44,12 @@
 		</div>
 		
 		<div>
-			<h3 id="">Create your organization template:</h3>
-			<form method="post" name="orgTemp" class="orgTempTxtArea" action="persistOrgTemp.php">
-			    <textarea name="createPlan" rows ='30' cols ='75' placeholder="Enter new plan here"></textarea><br>
-			    <input name="submit" type="submit" value="Submit Plan" class="formButton"/>
+			<h3 id="">Update your organization template:</h3>
+			<form method="post" name="updateOrgTemp" class="orgTempTxtArea" action="persistOrgTemp.php">
+			    <textarea name="updatePlan" rows ='30' cols ='75'>
+			    	<?php echo $plan ?>
+			    </textarea><br>
+			    <input name="update" type="submit" value="Update Plan" class="formButton"/>
 			</form>
 		</div>
 		

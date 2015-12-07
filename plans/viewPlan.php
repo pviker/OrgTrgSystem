@@ -7,6 +7,9 @@
 	    require $filename;
 	}
     
+	if (!isset($selfPlan)){
+		$selfPlan = "Self plan var not set";
+	}
     $_SESSION['currentPlan'] = $selfPlan;
 	 // formatted session var dump script
 //	include("../misc_files/seshVarDumpFn.php");
@@ -31,22 +34,48 @@
     if($_SESSION['role'] == "Employee") {     
 ?>
 
-
-
 <div id="accordion">
   <h3>My Plan</h3>
+  
   <div>
     <p>
-    <?php
-               
-    if(isset($selfPlan)) {
-               
-           echo $selfPlan;
-    }
-    
-    ?>
+	    <?php     
+		    if(isset($selfPlan)) {
+				echo $selfPlan;
+		    }
+	    ?>
     </p>
   </div>
+  
+</div>
+  	<?php 
+		} else if($_SESSION['role'] == "Manager") {     
+	?>
+
+<div id="accordion">
+  <h3>My Manager Plan</h3>
+  <div>
+    <p>
+	    <?php    
+		    if(isset($selfPlan)) {
+		    	echo $selfPlan;
+		    	//printf($selfPlan);
+	    	}
+    	?>
+    </p>
+  </div>
+  
+  <h3>Direct Reports</h3>
+  <div>
+	    <p>
+		    <?php
+			    if(isset($drPlanView)) {     
+			    	echo $drPlanView;
+		    	}
+		    ?>
+	    </p>
+  </div>
+  
 </div>
   <?php } else { ?>
       
@@ -54,33 +83,34 @@
   <h3>My Plan</h3>
   <div>
     <p>
-    <?php 
-           
-    if(isset($selfPlan)) {
-               
-           echo $selfPlan;
-    }
-    
-    ?>
+	    <?php    
+		    if(isset($selfPlan)) {
+		    	echo $selfPlan;
+	    	}
+    	?>
     </p>
   </div>
   
   <h3>Direct Reports</h3>
   <div>
-    <p>
-    <?php
-    
-    if(isset($drPlanView)) {     
-    	echo $drPlanView;
-    }
-    
-    ?>
-    </p>
+	    <p>
+		    <?php
+			    if(isset($drPlanView)) {     
+			    	echo $drPlanView;
+		    	}
+		    ?>
+	    </p>
   </div>
+  
 </div>
 <?php } ?>
 	
-	<a href="createPlan.php" id="createLink">Create Plan</a>
+	<a href="createPlan.php" id="createLink" class="formButton">Create Plan</a>
+	<?php
+		if($_SESSION['role'] == "Manager") {
+			echo "<a href='setOrgTemp.php' id='' class='formButton'>Set Manager Organization Template</a>";
+		}
+	?>
 	
 </body>
 </html>

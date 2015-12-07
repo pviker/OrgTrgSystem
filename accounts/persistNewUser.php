@@ -3,6 +3,16 @@
     session_start();
     
 	require("../controllers/db2.php");
+	
+	if(!isset($_SESSION['uname'])){
+		header("Location: admin.php");
+	}
+	
+	if(isset($_SESSION['adminFlag'])){
+		if($_SESSION['adminFlag'] != 1){
+			header("Location: admin.php");
+		}
+	}
 
 	if(isset($_POST['adduser'])) {
 	   
