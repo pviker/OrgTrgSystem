@@ -105,8 +105,7 @@
 
 <div class="textArea">
     
-	<textarea name="planSource" rows='30' cols='75' readonly>
-		<?php 
+	<textarea name="planSource" rows='30' cols='75' readonly><?php 
 		
 		if(isset($_SESSION['drPlan'])) {
 		    echo $_SESSION['drPlan'];
