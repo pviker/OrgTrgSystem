@@ -10,6 +10,12 @@ if($_SESSION['role'] == "Manager") {
        $selfPlanRow = mysqli_fetch_assoc($selfPlanResult);
     
        $selfPlan = $selfPlanRow['plan'];
+       
+       if(strtoupper($selfPlan) == "NULL") {
+        
+        header("Location: ../plans/createPlan.php");
+        exit;
+       }
         
        $drQuery = "select id from employees where organization_name ='" . $_SESSION['orgName'] . "' and role = 'Team Lead'";
        

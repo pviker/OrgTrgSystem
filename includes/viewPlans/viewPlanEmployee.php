@@ -13,7 +13,7 @@ if($_SESSION['role'] == "Employee") {
     
        if(strtoupper($selfPlan) == "NULL") {
         
-        header("Location: createPlan.php");
+        header("Location: ../plans/createPlan.php");
         exit;
        }
     

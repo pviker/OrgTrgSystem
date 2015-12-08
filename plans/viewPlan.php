@@ -10,8 +10,8 @@
 	if (!isset($selfPlan)){
 		$selfPlan = "Self plan var not set";
 	}
-    $_SESSION['currentPlan'] = $selfPlan;
-	 // formatted session var dump script
+    
+    // formatted session var dump script
 //	include("../misc_files/seshVarDumpFn.php");
 ?>
 

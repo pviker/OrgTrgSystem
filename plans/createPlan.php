@@ -5,9 +5,7 @@
 	require("../controllers/db2.php");
     require("../includes/header.php");
     require("../includes/topmenu.php");
-    foreach (glob("../includes/viewPlans/*.php") as $filename){
-        require $filename;
-    }
+
 		
 	if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -112,10 +110,21 @@
 		    unset($_SESSION['drPlan']);
 	        
 		} if(isset($_SESSION['pyPlan'])) {
-		    echo($_SESSION['pyPlan']);
+		    echo$_SESSION['pyPlan'];
 		    unset($_SESSION['pyPlan']);
 	        
-		}    
+		}   
+        
+        if(isset($_SESSION['orgTemplate'])) {
+            echo $_SESSION['orgTemplate'];
+            unset($_SESSION['orgTemplate']);
+        } 
+        
+        if(isset($_SESSION['supervisorPlan'])) {
+            echo $_SESSION['supervisorPlan'];
+            unset($_SESSION['supervisorPlan']); 
+                
+        }
 		    
 		?>  
 	</textarea>
@@ -124,7 +133,7 @@
 
 <h3 id="textArea2H3">Create Your Plan:</h3>
 
-<form method="post" class="textArea" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+<form method="post" class="textArea" action="">
 	
     <textarea name="createPlan" rows = '30' cols = '75' placeholder="Enter new plan here"><?php
     
@@ -137,6 +146,10 @@
     </textarea><br>
     <input name="submit" type="submit" value="Submit Plan" class="formButton" />
 </form>
+
+<!-- <form name="save" action="savePlan.php" method="post">
+<input type="submit" name="save" value="Save Plan" class="formButton" id="saveButton">
+</form> -->
 <br />
 <?php
     // if (isset($_POST['submit'])) {
