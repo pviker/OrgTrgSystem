@@ -176,6 +176,15 @@
 	
 }
 
+.sourceButtonDivEmployeeNoPeers {
+	
+	margin-top: 7%;
+	margin-left: 26.5%;
+	margin-bottom: 0px;
+	
+	
+}
+
 .sourceButtonDivCEO {
 	
 	margin-top: 7%;
@@ -188,6 +197,14 @@
 	
 	margin-top: 7%;
 	margin-left: 15%;
+	margin-bottom: 0px;
+	
+}
+
+.sourceButtonDivNoPeers {
+	
+	margin-top: 7%;
+	margin-left: 20%;
 	margin-bottom: 0px;
 	
 }

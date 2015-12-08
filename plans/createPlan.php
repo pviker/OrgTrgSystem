@@ -30,14 +30,13 @@
     
 ?>
 
-<div class="sourceButtonDivEmployee">
+<div class="sourceButtonDivEmployeeNoPeers">
 
 	<!-- <h3 id="textArea1H3">Plan Resources:</h3> -->
 
     
 	<form name="planSources" action="sources.php" method="post">
 								
-		<!-- <input type="submit" name="sources" value="Peers" class="sourceButtons"> -->
 		<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
 		<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
 		<input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
@@ -98,13 +97,12 @@
 
 <!-- <h3 class="center">Plan Resources:</h3> -->
 
-<div class="sourceButtonDiv">
+<div class="sourceButtonDivNoPeers">
 	
     
 	<form name="planSources" action="sources.php" method="post">
 	
 		<input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
-		<!-- <input type="submit" name="sources" value="Peers" class="sourceButtons"> -->
 		<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
 		<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
 		<input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
@@ -171,6 +169,12 @@
             echo $_SESSION['supervisorPlan'];
             unset($_SESSION['supervisorPlan']); 
                 
+        }
+        
+        if(isset($_SESSION['peersPlan'])) {
+            echo $_SESSION['peersPlan'];
+            unset($_SESSION['peersPlan']);
+            
         }
         
 		    
