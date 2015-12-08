@@ -12,5 +12,6 @@
     }
     
     header("Location: ../plans/createPlan.php");
+    exit;
     
 ?>
