@@ -23,23 +23,7 @@
         require $filename;
     }
     
-        if($_SESSION['role'] == "CEO") {
-            
-            $_SESSION['pyPlan'] = $selfPlan;
-            
-        } else if($_SESSION['role'] == "Manager") {
-            
-            $_SESSION['pyPlan'] = $selfPlan;
-            
-        } else if($_SESSION['role'] == "Team Lead") {
-            
-            $_SESSION['pyPlan'] = $selfPlan;
-            
-        } else if($_SESSION['role'] == "Employee") {
-            
-            $_SESSION['pyPlan'] = $selfPlan;
-            
-        }
+        $_SESSION['pyPlan'] = $selfPlan;
         
 		header("Location: ../plans/createPlan.php");
 		exit;

@@ -3,6 +3,7 @@
     require("../controllers/db2.php");
 	require("../includes/header.php");
 	require("../includes/topmenu.php");
+    
     foreach (glob("../includes/viewPlans/*.php") as $filename){
 	    require $filename;
 	}

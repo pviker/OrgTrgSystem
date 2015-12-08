@@ -5,6 +5,7 @@
 	require("../controllers/db2.php");
     require("../includes/header.php");
     require("../includes/topmenu.php");
+    require("checkForPeers.php");
 
 		
 	if (session_status() == PHP_SESSION_NONE) {
@@ -24,6 +25,8 @@
 <?php	
 
     if($_SESSION['role'] == "Employee") {
+        
+        if($_SESSION['peersFlag'] == "0") {
     
 ?>
 
@@ -34,7 +37,7 @@
     
 	<form name="planSources" action="sources.php" method="post">
 								
-		<input type="submit" name="sources" value="Peers" class="sourceButtons">
+		<!-- <input type="submit" name="sources" value="Peers" class="sourceButtons"> -->
 		<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
 		<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
 		<input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
@@ -48,7 +51,27 @@
 </div>
 
 
-<?php } else if($_SESSION['role'] == "CEO") { ?>
+<?php } else { ?> 
+    
+    <div class="sourceButtonDivEmployee">
+
+    <!-- <h3 id="textArea1H3">Plan Resources:</h3> -->
+
+    
+    <form name="planSources" action="sources.php" method="post">
+                                
+        <input type="submit" name="sources" value="Peers" class="sourceButtons">
+        <input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
+        <input type="submit" name="sources" value="Previous Years" class="sourceButtons">
+        <input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
+                    
+    </form>
+<br />
+<div>
+    Current selected year: <strong><?php echo $_SESSION['currentYear'] ?></strong> 
+    <!-- <span class="small-link">(<a href="../plans/changeYear.php">change</a>)</span> -->
+</div>
+ </div> <?php } } else if($_SESSION['role'] == "CEO") { ?>
     
 <div class="sourceButtonDivCEO">
 
@@ -70,7 +93,8 @@
 </div>
 
 
-<?php } else { ?>
+<?php } else {
+    if($_SESSION['peersFlag'] == "0") { ?>
 
 <!-- <h3 class="center">Plan Resources:</h3> -->
 
@@ -80,7 +104,7 @@
 	<form name="planSources" action="sources.php" method="post">
 	
 		<input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
-		<input type="submit" name="sources" value="Peers" class="sourceButtons">
+		<!-- <input type="submit" name="sources" value="Peers" class="sourceButtons"> -->
 		<input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
 		<input type="submit" name="sources" value="Previous Years" class="sourceButtons">
 		<input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
@@ -95,7 +119,30 @@
 
 
 
-<?php } ?>
+<?php } else { ?>
+    
+    <!-- <h3 class="center">Plan Resources:</h3> -->
+
+<div class="sourceButtonDiv">
+    
+    
+    <form name="planSources" action="sources.php" method="post">
+    
+        <input type="submit" name="sources" value="Direct Reports" class="sourceButtons">
+        <input type="submit" name="sources" value="Peers" class="sourceButtons">
+        <input type="submit" name="sources" value="Organizational Template" class="sourceButtons">
+        <input type="submit" name="sources" value="Previous Years" class="sourceButtons">
+        <input type="submit" name="sources" value="Supervisor Template" class="sourceButtons">
+        
+    </form>
+<br />
+<div>
+    Current selected year: <strong><?php echo $_SESSION['currentYear'] ?></strong> 
+    <!-- <span class="small-link">(<a href="../plans/changeYear.php">change</a>)</span> -->
+</div>
+</div>
+
+<?php } } ?>
 
 <br />
 
@@ -125,6 +172,7 @@
             unset($_SESSION['supervisorPlan']); 
                 
         }
+        
 		    
 		?>  
 	</textarea>
