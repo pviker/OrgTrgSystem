@@ -197,6 +197,7 @@
      ?>   
     </textarea><br>
     <input name="submit" type="submit" value="Submit Plan" class="formButton" />
+    <input type="submit" name="save" value="Save Plan" class="formButton">
     <input type="checkbox" name="share" value="share"> Share plan
 </form>
 

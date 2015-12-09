@@ -3,9 +3,6 @@
 require("../controllers/db2.php");
 require("../includes/header.php");
 require("../includes/topmenu.php");
-// foreach (glob("../includes/viewPlans/*.php") as $filename){
-    // require $filename;
-// }
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -33,6 +30,14 @@ $id = (int)$id;
           {
               $share = 0;
           }
+          
+if(isset($_POST['save'])) {
+    
+    $_SESSION['currentPlan'] = $_POST['createPlan'];
+    
+    header("Location: createPlan.php");
+    exit;
+}          
 
 if ($_SESSION['currentPlan'] != ""){
     $sql = "UPDATE PLANS SET plan='". $cp. "', shared='". $share. "' WHERE id ='". $id. "' and pYear ='". $year. "'";
