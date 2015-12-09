@@ -41,11 +41,16 @@
 		$plan = $_POST['updatePlan'];
 		$shared = 0;
 
-		$insert = "UPDATE plans SET plan='".$plan."' WHERE id=".$userID." and pYear=2015"; 
+		$insert = "UPDATE plans SET plan=\"".$plan."\" WHERE id=".$userID." and pYear='2015'"; 
 		 
+		echo $insert;
+		
 		if(mysqli_query($connection, $insert)){			
 			$_SESSION['message'] = "Admin organization plan templated updated!";
 			header("Location: ../accounts/admin.php");		
+		} else {
+			$_SESSION['message'] = "Error saving, please try again.";
+			header("Location: ../accounts/admin.php");
 		}
 	}
 

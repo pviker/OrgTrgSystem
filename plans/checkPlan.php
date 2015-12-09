@@ -2,7 +2,7 @@
 
     //session_start();
     
-	require("../controllers/db2.php");
+	//require("../controllers/db2.php");
 	
 	if(!isset($_SESSION['uname'])){
 		header("Location: admin.php");
@@ -11,7 +11,7 @@
 	$userID = $_SESSION['userID'];
 	$pYear = "2015";
 	
-	$query = "select * from plans where id=" . $userID;
+	$query = "select * from plans where id=" . $userID . " and pYear='2015'";
 	
    	$result = mysqli_query($connection, $query);
 
@@ -19,14 +19,13 @@
 
   	$plan = $row['plan'];
   	$pYear = $row['pYear'];
+  	$insertUpdate = "insert";
+  	
+  	var_dump($row);
 	
-  	if($pYear == "2015"){
 		if($plan != "" || $plan != null){
-			header("Location: updateOrgTemp.php");
+			$insertUpdate = "update";
 		}
-  	}
-
-	mysqli_close($connection);
+	
           
 ?>
-       

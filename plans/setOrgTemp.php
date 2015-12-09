@@ -6,11 +6,11 @@
 		header("Location: ../index.php");
 	}
 	
-	if (isset($_SESSION["role"])){
-		if($_SESSION["role"] != "Manager"){
-			header("Location: ../index.php");
-		}
-	}
+// 	if (isset($_SESSION["role"])){
+// 		if($_SESSION["role"] != "Manager"){
+// 			header("Location: ../index.php");
+// 		}
+// 	}
 	
 	require("checkTemp.php");
 	
