@@ -32,7 +32,7 @@
 		<div>
 			<span><a href="manageUsers.php" class="formButton">Manage Users</a></span>
 			<span><a href="reports.php" class="formButton">Generate Employee Reports</a></span>
-			<span><a href="../plans/viewPlan.php" class="formButton">View My 2015 Admin Organization Template</a></span><br /><br />
+			<!-- <span><a href="../plans/viewPlan.php" class="formButton">View My 2015 Admin Organization Template</a></span> --><br /><br />
 			<span><a href="../plans/setOrgTemp.php" class="formButton">Set Organization Plan Template</a></span>
 			<span><a href="../plans/updateOrgTemp.php" class="formButton">Update Organization Plan Template</a></span>
 		</div>
