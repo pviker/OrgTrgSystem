@@ -6,11 +6,13 @@
 		header("Location: ../index.php");
 	}
 	
-	if (isset($_SESSION["adminFlag"])){
-		if($_SESSION["adminFlag"] != 1){
+	if (isset($_SESSION["role"])){
+		if($_SESSION["role"] != "Manager"){
 			header("Location: ../index.php");
 		}
 	}
+	
+	require("checkTemp.php");
 	
 	require("../includes/topmenu.php");
 	
@@ -36,7 +38,7 @@
 		</div>
 		
 		<div>
-			<h3 id="">Create your organization template:</h3>
+			<h3 id="">Create your team template:</h3>
 			<form method="post" name="orgTemp" class="orgTempTxtArea" action="persistOrgTemp.php">
 			    <textarea name="createPlan" rows ='30' cols ='75' placeholder="Enter new plan here"></textarea><br>
 			    <input name="submit" type="submit" value="Submit Plan" class="formButton"/>

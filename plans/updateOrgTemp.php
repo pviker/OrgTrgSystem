@@ -6,11 +6,11 @@
 		header("Location: ../index.php");
 	}
 	
-	if (isset($_SESSION["adminFlag"])){
-		if($_SESSION["adminFlag"] != 1){
-			header("Location: ../index.php");
-		}
-	}
+	// if (isset($_SESSION["adminFlag"])){
+		// if($_SESSION["adminFlag"] != 1){
+			// header("Location: ../index.php");
+		// }
+	// }
 	
 	require("../includes/topmenu.php");
 	require("../controllers/db2.php");

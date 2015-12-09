@@ -8,11 +8,11 @@
 		header("Location: admin.php");
 	}
 	
-	if(isset($_SESSION['adminFlag'])){
-		if($_SESSION['adminFlag'] != 1){
-			header("Location: admin.php");
-		}
-	}
+	// if(isset($_SESSION['adminFlag'])){
+		// if($_SESSION['adminFlag'] != 1){
+			// header("Location: admin.php");
+		// }
+	// }
 
 	if(isset($_POST['submit'])) {
 		
@@ -28,6 +28,9 @@
 		if(mysqli_query($connection, $insert)){
 			$_SESSION['message'] = "Admin organization plan templated saved!";
 			header("Location: ../accounts/admin.php");		
+		} else {
+			$_SESSION['message'] = "Error";
+			header("Location: ../accounts/admin.php");
 		}
 	} 
 	
