@@ -185,7 +185,7 @@
 
 <h3 id="textArea2H3">Create Your Plan:</h3>
 
-<form method="post" class="textArea" action="">
+<form method="post" class="textArea" action="persistPlan.php">
 	
     <textarea name="createPlan" rows = '30' cols = '75' placeholder="Enter new plan here"><?php
     
@@ -197,6 +197,7 @@
      ?>   
     </textarea><br>
     <input name="submit" type="submit" value="Submit Plan" class="formButton" />
+    <input type="checkbox" name="share" value="share"> Share plan
 </form>
 
 <!-- <form name="save" action="savePlan.php" method="post">
