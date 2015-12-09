@@ -50,6 +50,6 @@ else{
 
 mysqli_query($connection, $sql);
 $_SESSION['message'] = "Your Plan Was Saved To The System";
-//header("Location:../accounts/admin.php");
+header("Location:../index.php");
 // xdebug_var_dump($id,$year);
 // var_dump($share);
