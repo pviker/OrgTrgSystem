@@ -200,20 +200,9 @@
     <input type="checkbox" name="share" value="share"> Share plan
 </form>
 
-<!-- <form name="save" action="savePlan.php" method="post">
-<input type="submit" name="save" value="Save Plan" class="formButton" id="saveButton">
-</form> -->
+
 <br />
-<?php
-    // if (isset($_POST['submit'])) {
-		// $year = $_POST['year']; 
-        // $text = mysql_real_escape_string($_POST['plan']); 
-		// mysql_connect ("localhost", "user1", "abc123") or die ('Error: ' . mysql_error());
-        // mysql_select_db("orgtrn") or die ('Data error:' . mysql_error());
-        // $query="INSERT INTO plans VALUES ('$userid' , '$year', '$text', '1')" ;
-        // mysql_query($query) or die ('Error updating database ' . mysql_error());
-    // }
-?>
+
 
 </body>
 

@@ -3,7 +3,7 @@
 if($_SESSION['role'] == "CEO") {
                 
        $selfPlanQuery = "select plan from plans where id='" . $_SESSION['userID'] . 
-       "' and pyear='" . $_SESSION['currentYear'] . "'";
+       "' and pYear='" . $_SESSION['currentYear'] . "'";
     
        $selfPlanResult = mysqli_query($connection, $selfPlanQuery);
     
@@ -27,7 +27,7 @@ if($_SESSION['role'] == "CEO") {
        while($drRow = mysqli_fetch_assoc($drResult)) {
                    
              $drPlanQuery = "select plan from plans where id = '" . $drRow['id'] . 
-             "' and pyear='" . $_SESSION['currentYear'] . "'";
+             "' and pYear='" . $_SESSION['currentYear'] . "'";
            
              $drPlanResult = mysqli_query($connection, $drPlanQuery);
              

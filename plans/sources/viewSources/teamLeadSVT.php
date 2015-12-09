@@ -16,7 +16,7 @@ if($_SESSION['role'] == "Team Lead") {
     while($supervisorRow = mysqli_fetch_assoc($supervisorResult)) {
         
         $supervisorPlanQuery = "select plan from plans where id='" . $supervisorRow['id'] . "'
-        and pyear='". $_SESSION['currentYear'] . "'";
+        and pYear='". $_SESSION['currentYear'] . "'";
         
         $supervisorPlanResult = mysqli_query($connection, $supervisorPlanQuery);
         

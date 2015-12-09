@@ -9,7 +9,7 @@ if($_POST['sources'] == "Organizational Template") {
    $initialDate = date("Y"); 
     
    $orgTempQuery = "select plan from plans, employees where plans.id=employees.id and employees.role='admin' 
-   and plans.pyear= '" . $initialDate . "'";
+   and plans.pYear= '" . $initialDate . "'";
    
    $orgTempResult = mysqli_query($connection, $orgTempQuery);
    
